@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21AF812A2C93059700376D1F /* VideoGalery_bythen_aiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF81292C93059700376D1F /* VideoGalery_bythen_aiApp.swift */; };
+		21AF812C2C93059700376D1F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF812B2C93059700376D1F /* ContentView.swift */; };
+		21AF812E2C93059900376D1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21AF812D2C93059900376D1F /* Assets.xcassets */; };
+		21AF81312C93059900376D1F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21AF81302C93059900376D1F /* Preview Assets.xcassets */; };
+		21AF813B2C93059A00376D1F /* VideoGalery_bythen_aiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF813A2C93059A00376D1F /* VideoGalery_bythen_aiTests.swift */; };
+		21AF81452C93059A00376D1F /* VideoGalery_bythen_aiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF81442C93059A00376D1F /* VideoGalery_bythen_aiUITests.swift */; };
+		21AF81472C93059A00376D1F /* VideoGalery_bythen_aiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF81462C93059A00376D1F /* VideoGalery_bythen_aiUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		21AF81372C93059A00376D1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21AF811E2C93059700376D1F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21AF81252C93059700376D1F;
+			remoteInfo = "VideoGalery-bythen.ai";
+		};
+		21AF81412C93059A00376D1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21AF811E2C93059700376D1F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21AF81252C93059700376D1F;
+			remoteInfo = "VideoGalery-bythen.ai";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		21AF81262C93059700376D1F /* VideoGalery-bythen.ai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VideoGalery-bythen.ai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21AF81292C93059700376D1F /* VideoGalery_bythen_aiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGalery_bythen_aiApp.swift; sourceTree = "<group>"; };
+		21AF812B2C93059700376D1F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		21AF812D2C93059900376D1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		21AF81302C93059900376D1F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		21AF81362C93059A00376D1F /* VideoGalery-bythen.aiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VideoGalery-bythen.aiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21AF813A2C93059A00376D1F /* VideoGalery_bythen_aiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGalery_bythen_aiTests.swift; sourceTree = "<group>"; };
+		21AF81402C93059A00376D1F /* VideoGalery-bythen.aiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VideoGalery-bythen.aiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21AF81442C93059A00376D1F /* VideoGalery_bythen_aiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGalery_bythen_aiUITests.swift; sourceTree = "<group>"; };
+		21AF81462C93059A00376D1F /* VideoGalery_bythen_aiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGalery_bythen_aiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21AF81232C93059700376D1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21AF81332C93059A00376D1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21AF813D2C93059A00376D1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		21AF811D2C93059700376D1F = {
+			isa = PBXGroup;
+			children = (
+				21AF81282C93059700376D1F /* VideoGalery-bythen.ai */,
+				21AF81392C93059A00376D1F /* VideoGalery-bythen.aiTests */,
+				21AF81432C93059A00376D1F /* VideoGalery-bythen.aiUITests */,
+				21AF81272C93059700376D1F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		21AF81272C93059700376D1F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21AF81262C93059700376D1F /* VideoGalery-bythen.ai.app */,
+				21AF81362C93059A00376D1F /* VideoGalery-bythen.aiTests.xctest */,
+				21AF81402C93059A00376D1F /* VideoGalery-bythen.aiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		21AF81282C93059700376D1F /* VideoGalery-bythen.ai */ = {
+			isa = PBXGroup;
+			children = (
+				21AF81292C93059700376D1F /* VideoGalery_bythen_aiApp.swift */,
+				21AF812B2C93059700376D1F /* ContentView.swift */,
+				21AF812D2C93059900376D1F /* Assets.xcassets */,
+				21AF812F2C93059900376D1F /* Preview Content */,
+			);
+			path = "VideoGalery-bythen.ai";
+			sourceTree = "<group>";
+		};
+		21AF812F2C93059900376D1F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				21AF81302C93059900376D1F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		21AF81392C93059A00376D1F /* VideoGalery-bythen.aiTests */ = {
+			isa = PBXGroup;
+			children = (
+				21AF813A2C93059A00376D1F /* VideoGalery_bythen_aiTests.swift */,
+			);
+			path = "VideoGalery-bythen.aiTests";
+			sourceTree = "<group>";
+		};
+		21AF81432C93059A00376D1F /* VideoGalery-bythen.aiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				21AF81442C93059A00376D1F /* VideoGalery_bythen_aiUITests.swift */,
+				21AF81462C93059A00376D1F /* VideoGalery_bythen_aiUITestsLaunchTests.swift */,
+			);
+			path = "VideoGalery-bythen.aiUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		21AF81252C93059700376D1F /* VideoGalery-bythen.ai */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21AF814A2C93059A00376D1F /* Build configuration list for PBXNativeTarget "VideoGalery-bythen.ai" */;
+			buildPhases = (
+				21AF81222C93059700376D1F /* Sources */,
+				21AF81232C93059700376D1F /* Frameworks */,
+				21AF81242C93059700376D1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VideoGalery-bythen.ai";
+			productName = "VideoGalery-bythen.ai";
+			productReference = 21AF81262C93059700376D1F /* VideoGalery-bythen.ai.app */;
+			productType = "com.apple.product-type.application";
+		};
+		21AF81352C93059A00376D1F /* VideoGalery-bythen.aiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21AF814D2C93059A00376D1F /* Build configuration list for PBXNativeTarget "VideoGalery-bythen.aiTests" */;
+			buildPhases = (
+				21AF81322C93059A00376D1F /* Sources */,
+				21AF81332C93059A00376D1F /* Frameworks */,
+				21AF81342C93059A00376D1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				21AF81382C93059A00376D1F /* PBXTargetDependency */,
+			);
+			name = "VideoGalery-bythen.aiTests";
+			productName = "VideoGalery-bythen.aiTests";
+			productReference = 21AF81362C93059A00376D1F /* VideoGalery-bythen.aiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		21AF813F2C93059A00376D1F /* VideoGalery-bythen.aiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21AF81502C93059A00376D1F /* Build configuration list for PBXNativeTarget "VideoGalery-bythen.aiUITests" */;
+			buildPhases = (
+				21AF813C2C93059A00376D1F /* Sources */,
+				21AF813D2C93059A00376D1F /* Frameworks */,
+				21AF813E2C93059A00376D1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				21AF81422C93059A00376D1F /* PBXTargetDependency */,
+			);
+			name = "VideoGalery-bythen.aiUITests";
+			productName = "VideoGalery-bythen.aiUITests";
+			productReference = 21AF81402C93059A00376D1F /* VideoGalery-bythen.aiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		21AF811E2C93059700376D1F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					21AF81252C93059700376D1F = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					21AF81352C93059A00376D1F = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 21AF81252C93059700376D1F;
+					};
+					21AF813F2C93059A00376D1F = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 21AF81252C93059700376D1F;
+					};
+				};
+			};
+			buildConfigurationList = 21AF81212C93059700376D1F /* Build configuration list for PBXProject "VideoGalery-bythen.ai" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 21AF811D2C93059700376D1F;
+			productRefGroup = 21AF81272C93059700376D1F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				21AF81252C93059700376D1F /* VideoGalery-bythen.ai */,
+				21AF81352C93059A00376D1F /* VideoGalery-bythen.aiTests */,
+				21AF813F2C93059A00376D1F /* VideoGalery-bythen.aiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		21AF81242C93059700376D1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21AF81312C93059900376D1F /* Preview Assets.xcassets in Resources */,
+				21AF812E2C93059900376D1F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21AF81342C93059A00376D1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21AF813E2C93059A00376D1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		21AF81222C93059700376D1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21AF812C2C93059700376D1F /* ContentView.swift in Sources */,
+				21AF812A2C93059700376D1F /* VideoGalery_bythen_aiApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21AF81322C93059A00376D1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21AF813B2C93059A00376D1F /* VideoGalery_bythen_aiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21AF813C2C93059A00376D1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21AF81472C93059A00376D1F /* VideoGalery_bythen_aiUITestsLaunchTests.swift in Sources */,
+				21AF81452C93059A00376D1F /* VideoGalery_bythen_aiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		21AF81382C93059A00376D1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21AF81252C93059700376D1F /* VideoGalery-bythen.ai */;
+			targetProxy = 21AF81372C93059A00376D1F /* PBXContainerItemProxy */;
+		};
+		21AF81422C93059A00376D1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21AF81252C93059700376D1F /* VideoGalery-bythen.ai */;
+			targetProxy = 21AF81412C93059A00376D1F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		21AF81482C93059A00376D1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		21AF81492C93059A00376D1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		21AF814B2C93059A00376D1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VideoGalery-bythen.ai/Preview Content\"";
+				DEVELOPMENT_TEAM = 35HAL8HCRV;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sherwinyang.VideoGalery-bythen-ai";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		21AF814C2C93059A00376D1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VideoGalery-bythen.ai/Preview Content\"";
+				DEVELOPMENT_TEAM = 35HAL8HCRV;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sherwinyang.VideoGalery-bythen-ai";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		21AF814E2C93059A00376D1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35HAL8HCRV;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sherwinyang.VideoGalery-bythen-aiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoGalery-bythen.ai.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VideoGalery-bythen.ai";
+			};
+			name = Debug;
+		};
+		21AF814F2C93059A00376D1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35HAL8HCRV;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sherwinyang.VideoGalery-bythen-aiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoGalery-bythen.ai.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VideoGalery-bythen.ai";
+			};
+			name = Release;
+		};
+		21AF81512C93059A00376D1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35HAL8HCRV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sherwinyang.VideoGalery-bythen-aiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "VideoGalery-bythen.ai";
+			};
+			name = Debug;
+		};
+		21AF81522C93059A00376D1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35HAL8HCRV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sherwinyang.VideoGalery-bythen-aiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "VideoGalery-bythen.ai";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21AF81212C93059700376D1F /* Build configuration list for PBXProject "VideoGalery-bythen.ai" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21AF81482C93059A00376D1F /* Debug */,
+				21AF81492C93059A00376D1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21AF814A2C93059A00376D1F /* Build configuration list for PBXNativeTarget "VideoGalery-bythen.ai" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21AF814B2C93059A00376D1F /* Debug */,
+				21AF814C2C93059A00376D1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21AF814D2C93059A00376D1F /* Build configuration list for PBXNativeTarget "VideoGalery-bythen.aiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21AF814E2C93059A00376D1F /* Debug */,
+				21AF814F2C93059A00376D1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21AF81502C93059A00376D1F /* Build configuration list for PBXNativeTarget "VideoGalery-bythen.aiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21AF81512C93059A00376D1F /* Debug */,
+				21AF81522C93059A00376D1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 21AF811E2C93059700376D1F /* Project object */;
+}
