@@ -17,6 +17,8 @@
 		2149A5202C94839C0070EED5 /* FirebaseSourceApiKeyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A51F2C94839C0070EED5 /* FirebaseSourceApiKeyProvider.swift */; };
 		2149A5232C9488A70070EED5 /* FirebaseSourceApiKeyProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5222C9488A70070EED5 /* FirebaseSourceApiKeyProviderTests.swift */; };
 		2149A5252C948FDB0070EED5 /* FirebaseSourceApiKeyProviderIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5242C948FDB0070EED5 /* FirebaseSourceApiKeyProviderIntegrationTests.swift */; };
+		2149A5292C9499F80070EED5 /* ApiKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5282C9499F80070EED5 /* ApiKeyManager.swift */; };
+		2149A52F2C94A56F0070EED5 /* ApiKeyManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A52E2C94A56F0070EED5 /* ApiKeyManagerTest.swift */; };
 		21AF812A2C93059700376D1F /* VideoGalery_bythen_aiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF81292C93059700376D1F /* VideoGalery_bythen_aiApp.swift */; };
 		21AF812C2C93059700376D1F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF812B2C93059700376D1F /* ContentView.swift */; };
 		21AF812E2C93059900376D1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21AF812D2C93059900376D1F /* Assets.xcassets */; };
@@ -59,6 +61,8 @@
 		2149A51F2C94839C0070EED5 /* FirebaseSourceApiKeyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSourceApiKeyProvider.swift; sourceTree = "<group>"; };
 		2149A5222C9488A70070EED5 /* FirebaseSourceApiKeyProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSourceApiKeyProviderTests.swift; sourceTree = "<group>"; };
 		2149A5242C948FDB0070EED5 /* FirebaseSourceApiKeyProviderIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSourceApiKeyProviderIntegrationTests.swift; sourceTree = "<group>"; };
+		2149A5282C9499F80070EED5 /* ApiKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeyManager.swift; sourceTree = "<group>"; };
+		2149A52E2C94A56F0070EED5 /* ApiKeyManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeyManagerTest.swift; sourceTree = "<group>"; };
 		21AF81262C93059700376D1F /* VideoGalery-bythen.ai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VideoGalery-bythen.ai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21AF81292C93059700376D1F /* VideoGalery_bythen_aiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGalery_bythen_aiApp.swift; sourceTree = "<group>"; };
 		21AF812B2C93059700376D1F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 		2149A5172C94817F0070EED5 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				2149A5282C9499F80070EED5 /* ApiKeyManager.swift */,
 				2149A5162C94817F0070EED5 /* SecureLocalSourceApiKeyManager.swift */,
 				2149A51F2C94839C0070EED5 /* FirebaseSourceApiKeyProvider.swift */,
 			);
@@ -131,9 +136,10 @@
 		2149A51A2C94818F0070EED5 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				2149A52E2C94A56F0070EED5 /* ApiKeyManagerTest.swift */,
+				2149A5192C94818F0070EED5 /* SecureLocalSourceApiKeyManagerTests.swift */,
 				2149A5222C9488A70070EED5 /* FirebaseSourceApiKeyProviderTests.swift */,
 				2149A5242C948FDB0070EED5 /* FirebaseSourceApiKeyProviderIntegrationTests.swift */,
-				2149A5192C94818F0070EED5 /* SecureLocalSourceApiKeyManagerTests.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -375,6 +381,7 @@
 				2149A5202C94839C0070EED5 /* FirebaseSourceApiKeyProvider.swift in Sources */,
 				21AF812A2C93059700376D1F /* VideoGalery_bythen_aiApp.swift in Sources */,
 				2149A5182C94817F0070EED5 /* SecureLocalSourceApiKeyManager.swift in Sources */,
+				2149A5292C9499F80070EED5 /* ApiKeyManager.swift in Sources */,
 				21AF81BC2C93339C00376D1F /* APIURLRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +394,7 @@
 				21AF81BE2C9333AF00376D1F /* APIURLRequestTests.swift in Sources */,
 				21AF81592C93086D00376D1F /* HTTPRequestErrorIntegrationTests.swift in Sources */,
 				21AF815B2C9309B900376D1F /* TestHelper.swift in Sources */,
+				2149A52F2C94A56F0070EED5 /* ApiKeyManagerTest.swift in Sources */,
 				2149A5252C948FDB0070EED5 /* FirebaseSourceApiKeyProviderIntegrationTests.swift in Sources */,
 				2149A5232C9488A70070EED5 /* FirebaseSourceApiKeyProviderTests.swift in Sources */,
 				21AF81B72C93301300376D1F /* CloudinaryURLBuilderTests.swift in Sources */,

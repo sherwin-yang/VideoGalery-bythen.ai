@@ -7,11 +7,11 @@
 
 import XCTest
 
-enum ErrorNil: Error { case null }
+enum NoErrorExpectation: Error { case none }
 
 func XCTAssertThrowsError<T, R>(
     _ expression: @autoclosure () async throws -> T,
-    expectedError: R = ErrorNil.null,
+    expectedError: R = NoErrorExpectation.none,
     useThisOrAddAssertion: (Error) -> () = { _ in },
     failMessage: String = "",
     file: StaticString = #filePath,
@@ -21,7 +21,7 @@ func XCTAssertThrowsError<T, R>(
         _ = try await expression()
         XCTFail(failMessage, file: file, line: line)
     } catch {
-        if expectedError as? ErrorNil == nil {
+        if expectedError as? NoErrorExpectation == nil {
             XCTAssertEqual(error as? R, expectedError, file: file, line: line)
         }
         useThisOrAddAssertion(error)
