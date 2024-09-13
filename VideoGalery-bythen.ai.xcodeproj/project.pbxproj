@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		213D42D82C9442CF00F57411 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 213D42D72C9442CF00F57411 /* FirebaseFirestore */; };
+		213D42DE2C9445EF00F57411 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213D42DC2C9445EF00F57411 /* KeychainStore.swift */; };
+		213D42E42C94496E00F57411 /* KeychainStoreIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213D42E32C94496E00F57411 /* KeychainStoreIntegrationTests.swift */; };
 		21498BBD2C941BB9005FC3B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21498BBC2C941BB9005FC3B0 /* GoogleService-Info.plist */; };
+		2149A5182C94817F0070EED5 /* ApiKeyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5162C94817F0070EED5 /* ApiKeyProvider.swift */; };
+		2149A51B2C9481900070EED5 /* ApiKeyProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5192C94818F0070EED5 /* ApiKeyProviderTests.swift */; };
 		21AF812A2C93059700376D1F /* VideoGalery_bythen_aiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF81292C93059700376D1F /* VideoGalery_bythen_aiApp.swift */; };
 		21AF812C2C93059700376D1F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF812B2C93059700376D1F /* ContentView.swift */; };
 		21AF812E2C93059900376D1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21AF812D2C93059900376D1F /* Assets.xcassets */; };
@@ -42,7 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		213D42DC2C9445EF00F57411 /* KeychainStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
+		213D42E32C94496E00F57411 /* KeychainStoreIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStoreIntegrationTests.swift; sourceTree = "<group>"; };
 		21498BBC2C941BB9005FC3B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2149A5162C94817F0070EED5 /* ApiKeyProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeyProvider.swift; sourceTree = "<group>"; };
+		2149A5192C94818F0070EED5 /* ApiKeyProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeyProviderTests.swift; sourceTree = "<group>"; };
 		21AF81262C93059700376D1F /* VideoGalery-bythen.ai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VideoGalery-bythen.ai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21AF81292C93059700376D1F /* VideoGalery_bythen_aiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGalery_bythen_aiApp.swift; sourceTree = "<group>"; };
 		21AF812B2C93059700376D1F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +95,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		213D42DD2C9445EF00F57411 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				213D42DC2C9445EF00F57411 /* KeychainStore.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		213D42E22C94495700F57411 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				213D42E32C94496E00F57411 /* KeychainStoreIntegrationTests.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		2149A5172C94817F0070EED5 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				2149A5162C94817F0070EED5 /* ApiKeyProvider.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		2149A51A2C94818F0070EED5 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				2149A5192C94818F0070EED5 /* ApiKeyProviderTests.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		21AF811D2C93059700376D1F = {
 			isa = PBXGroup;
 			children = (
@@ -112,7 +152,9 @@
 			children = (
 				21AF81292C93059700376D1F /* VideoGalery_bythen_aiApp.swift */,
 				21AF812B2C93059700376D1F /* ContentView.swift */,
+				2149A5172C94817F0070EED5 /* Interactor */,
 				21AF81532C93080900376D1F /* HTTPClient */,
+				213D42DD2C9445EF00F57411 /* Repository */,
 				21498BBC2C941BB9005FC3B0 /* GoogleService-Info.plist */,
 				21AF812D2C93059900376D1F /* Assets.xcassets */,
 				21AF812F2C93059900376D1F /* Preview Content */,
@@ -131,7 +173,9 @@
 		21AF81392C93059A00376D1F /* VideoGalery-bythen.aiTests */ = {
 			isa = PBXGroup;
 			children = (
+				2149A51A2C94818F0070EED5 /* Interactor */,
 				21AF81562C93083000376D1F /* HTTPClient */,
+				213D42E22C94495700F57411 /* Repository */,
 				21AF815A2C9309B900376D1F /* TestHelper.swift */,
 			);
 			path = "VideoGalery-bythen.aiTests";
@@ -306,7 +350,9 @@
 				21AF81552C93082200376D1F /* HTTPRequest.swift in Sources */,
 				21AF81B52C932FEA00376D1F /* CloudinaryURLBuilder.swift in Sources */,
 				21AF812C2C93059700376D1F /* ContentView.swift in Sources */,
+				213D42DE2C9445EF00F57411 /* KeychainStore.swift in Sources */,
 				21AF812A2C93059700376D1F /* VideoGalery_bythen_aiApp.swift in Sources */,
+				2149A5182C94817F0070EED5 /* ApiKeyProvider.swift in Sources */,
 				21AF81BC2C93339C00376D1F /* APIURLRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,10 +361,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				213D42E42C94496E00F57411 /* KeychainStoreIntegrationTests.swift in Sources */,
 				21AF81BE2C9333AF00376D1F /* APIURLRequestTests.swift in Sources */,
 				21AF81592C93086D00376D1F /* HTTPRequestErrorIntegrationTests.swift in Sources */,
 				21AF815B2C9309B900376D1F /* TestHelper.swift in Sources */,
 				21AF81B72C93301300376D1F /* CloudinaryURLBuilderTests.swift in Sources */,
+				2149A51B2C9481900070EED5 /* ApiKeyProviderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
