@@ -1,5 +1,5 @@
 //
-//  ApiKeyProviderTests.swift
+//  SecureLocalSourceApiKeyManagerTests.swift
 //  VideoGalery-bythen.aiTests
 //
 //  Created by Sherwin Yang on 9/13/24.
@@ -9,11 +9,11 @@ import XCTest
 
 @testable import VideoGalery_bythen_ai
 
-final class ApiKeyProviderTests: XCTestCase {
+final class SecureLocalSourceApiKeyManagerTests: XCTestCase {
     
     func testGet_shouldCallGetFromSecureStorage() {
         let secureStoreMock = SecureStoreMock(fillKeys: true)
-        let sut = ApiKeyProvider(secureStorage: secureStoreMock)
+        let sut = SecureLocalSourceApiKeyManager(secureStorage: secureStoreMock)
         
         _ = sut.get()
         
@@ -23,14 +23,14 @@ final class ApiKeyProviderTests: XCTestCase {
     
     func testGet_shouldReturnNil_whenStorageReturnNil() {
         let secureStoreMock = SecureStoreMock(fillKeys: false)
-        let sut = ApiKeyProvider(secureStorage: secureStoreMock)
+        let sut = SecureLocalSourceApiKeyManager(secureStorage: secureStoreMock)
         
         XCTAssertNil(sut.get())
     }
     
     func testGet_shouldReturnApiKeyFromStorage() {
         let secureStoreMock = SecureStoreMock(fillKeys: true)
-        let sut = ApiKeyProvider(secureStorage: secureStoreMock)
+        let sut = SecureLocalSourceApiKeyManager(secureStorage: secureStoreMock)
         
         XCTAssertEqual(sut.get(),
                        ApiKey(apiKey: secureStoreMock.apiKey!, 
@@ -39,7 +39,7 @@ final class ApiKeyProviderTests: XCTestCase {
     
     func testSave() {
         let secureStoreMock = SecureStoreMock()
-        var sut = ApiKeyProvider(secureStorage: secureStoreMock)
+        var sut = SecureLocalSourceApiKeyManager(secureStorage: secureStoreMock)
         
         let apiKey = String.random()
         let apiSecret = String.random()

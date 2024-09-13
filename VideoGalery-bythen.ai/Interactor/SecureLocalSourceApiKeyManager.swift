@@ -1,5 +1,5 @@
 //
-//  ApiKeyProvider.swift
+//  SecureLocalSourceApiKeyManager.swift
 //  VideoGalery-bythen.ai
 //
 //  Created by Sherwin Yang on 9/13/24.
@@ -12,19 +12,19 @@ struct ApiKey: Equatable {
     let apiSecret: String
 }
 
-protocol ApiKeyProviderProtocol {
+protocol SecureLocalSourceApiKeyManagerProtocol {
     func get() -> ApiKey?
     mutating func save(apiKey: String, apiSecret: String)
 }
 
-struct ApiKeyProvider: ApiKeyProviderProtocol {
+struct SecureLocalSourceApiKeyManager: SecureLocalSourceApiKeyManagerProtocol {
     
     private enum KeychainKeys: String {
         case apiKey
         case apiSecret
     }
     
-    var secureStorage: SecureStoreProtocol
+    private var secureStorage: SecureStoreProtocol
     
     init(secureStorage: SecureStoreProtocol) {
         self.secureStorage = secureStorage

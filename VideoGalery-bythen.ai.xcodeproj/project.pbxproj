@@ -11,8 +11,8 @@
 		213D42DE2C9445EF00F57411 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213D42DC2C9445EF00F57411 /* KeychainStore.swift */; };
 		213D42E42C94496E00F57411 /* KeychainStoreIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213D42E32C94496E00F57411 /* KeychainStoreIntegrationTests.swift */; };
 		21498BBD2C941BB9005FC3B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21498BBC2C941BB9005FC3B0 /* GoogleService-Info.plist */; };
-		2149A5182C94817F0070EED5 /* ApiKeyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5162C94817F0070EED5 /* ApiKeyProvider.swift */; };
-		2149A51B2C9481900070EED5 /* ApiKeyProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5192C94818F0070EED5 /* ApiKeyProviderTests.swift */; };
+		2149A5182C94817F0070EED5 /* SecureLocalSourceApiKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5162C94817F0070EED5 /* SecureLocalSourceApiKeyManager.swift */; };
+		2149A51B2C9481900070EED5 /* SecureLocalSourceApiKeyManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5192C94818F0070EED5 /* SecureLocalSourceApiKeyManagerTests.swift */; };
 		2149A51E2C9483760070EED5 /* FirebaseDocumentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A51D2C9483760070EED5 /* FirebaseDocumentProvider.swift */; };
 		2149A5202C94839C0070EED5 /* FirebaseSourceApiKeyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A51F2C94839C0070EED5 /* FirebaseSourceApiKeyProvider.swift */; };
 		2149A5232C9488A70070EED5 /* FirebaseSourceApiKeyProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5222C9488A70070EED5 /* FirebaseSourceApiKeyProviderTests.swift */; };
@@ -53,8 +53,8 @@
 		213D42DC2C9445EF00F57411 /* KeychainStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
 		213D42E32C94496E00F57411 /* KeychainStoreIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStoreIntegrationTests.swift; sourceTree = "<group>"; };
 		21498BBC2C941BB9005FC3B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		2149A5162C94817F0070EED5 /* ApiKeyProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeyProvider.swift; sourceTree = "<group>"; };
-		2149A5192C94818F0070EED5 /* ApiKeyProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeyProviderTests.swift; sourceTree = "<group>"; };
+		2149A5162C94817F0070EED5 /* SecureLocalSourceApiKeyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureLocalSourceApiKeyManager.swift; sourceTree = "<group>"; };
+		2149A5192C94818F0070EED5 /* SecureLocalSourceApiKeyManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureLocalSourceApiKeyManagerTests.swift; sourceTree = "<group>"; };
 		2149A51D2C9483760070EED5 /* FirebaseDocumentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDocumentProvider.swift; sourceTree = "<group>"; };
 		2149A51F2C94839C0070EED5 /* FirebaseSourceApiKeyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSourceApiKeyProvider.swift; sourceTree = "<group>"; };
 		2149A5222C9488A70070EED5 /* FirebaseSourceApiKeyProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSourceApiKeyProviderTests.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 		2149A5172C94817F0070EED5 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				2149A5162C94817F0070EED5 /* ApiKeyProvider.swift */,
+				2149A5162C94817F0070EED5 /* SecureLocalSourceApiKeyManager.swift */,
 				2149A51F2C94839C0070EED5 /* FirebaseSourceApiKeyProvider.swift */,
 			);
 			path = Interactor;
@@ -131,9 +131,9 @@
 		2149A51A2C94818F0070EED5 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				2149A5192C94818F0070EED5 /* ApiKeyProviderTests.swift */,
 				2149A5222C9488A70070EED5 /* FirebaseSourceApiKeyProviderTests.swift */,
 				2149A5242C948FDB0070EED5 /* FirebaseSourceApiKeyProviderIntegrationTests.swift */,
+				2149A5192C94818F0070EED5 /* SecureLocalSourceApiKeyManagerTests.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -374,7 +374,7 @@
 				2149A51E2C9483760070EED5 /* FirebaseDocumentProvider.swift in Sources */,
 				2149A5202C94839C0070EED5 /* FirebaseSourceApiKeyProvider.swift in Sources */,
 				21AF812A2C93059700376D1F /* VideoGalery_bythen_aiApp.swift in Sources */,
-				2149A5182C94817F0070EED5 /* ApiKeyProvider.swift in Sources */,
+				2149A5182C94817F0070EED5 /* SecureLocalSourceApiKeyManager.swift in Sources */,
 				21AF81BC2C93339C00376D1F /* APIURLRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,7 +390,7 @@
 				2149A5252C948FDB0070EED5 /* FirebaseSourceApiKeyProviderIntegrationTests.swift in Sources */,
 				2149A5232C9488A70070EED5 /* FirebaseSourceApiKeyProviderTests.swift in Sources */,
 				21AF81B72C93301300376D1F /* CloudinaryURLBuilderTests.swift in Sources */,
-				2149A51B2C9481900070EED5 /* ApiKeyProviderTests.swift in Sources */,
+				2149A51B2C9481900070EED5 /* SecureLocalSourceApiKeyManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
