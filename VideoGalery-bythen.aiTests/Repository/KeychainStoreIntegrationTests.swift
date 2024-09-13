@@ -10,6 +10,10 @@ import XCTest
 @testable import VideoGalery_bythen_ai
 
 final class KeychainStoreIntegrationTests: XCTestCase {
+    
+    override func setUpWithError() throws {
+        removeApiKeyFromKeychain()
+    }
 
     func testGet_thenSave_shouldRetrieveCorrectValue() throws {
         var sut = KeychainStore()

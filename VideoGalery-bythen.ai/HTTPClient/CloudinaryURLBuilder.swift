@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum CloudinaryURLBuilderError: Error {
+    case failedBuilding
+}
+
 struct CloudinaryURLBuilder {
     private let path: String
     
@@ -14,7 +18,13 @@ struct CloudinaryURLBuilder {
         self.path = path
     }
     
-    func createURL() -> URL? {
+    func build() throws -> URL {
+        guard let url = createURL()
+        else { throw CloudinaryURLBuilderError.failedBuilding }
+        return url
+    }
+    
+    private func createURL() -> URL? {
         var component = URLComponents()
         component.scheme = "https"
         component.host = "api.cloudinary.com"

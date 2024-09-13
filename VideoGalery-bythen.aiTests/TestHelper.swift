@@ -7,6 +7,8 @@
 
 import XCTest
 
+enum ErrorInTest: Error { case sample }
+
 enum NoErrorExpectation: Error { case none }
 
 func XCTAssertThrowsError<T, R>(
@@ -38,4 +40,16 @@ extension Int {
     static func random() -> Self {
         .random(in: 0...100)
     }
+}
+
+func removeApiKeyFromKeychain() {
+    var query: [String: Any] = [
+        kSecClass as String: kSecClassGenericPassword,
+    ]
+    
+    query[kSecAttrAccount as String] = "apiKey"
+    SecItemDelete(query as CFDictionary)
+    
+    query[kSecAttrAccount as String] = "apiSecret"
+    SecItemDelete(query as CFDictionary)
 }

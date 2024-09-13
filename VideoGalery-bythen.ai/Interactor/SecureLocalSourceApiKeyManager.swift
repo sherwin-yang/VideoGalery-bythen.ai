@@ -43,3 +43,9 @@ struct SecureLocalSourceApiKeyManager: SecureLocalSourceApiKeyManagerProtocol {
         secureStorage[KeychainKeys.apiSecret.rawValue] = apiSecret
     }
 }
+
+extension SecureLocalSourceApiKeyManager {
+    static func make() -> Self {
+        .init(secureStorage: KeychainStore())
+    }
+}

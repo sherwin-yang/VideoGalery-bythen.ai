@@ -42,6 +42,6 @@ struct FirebaseSourceApiKeyProvider: RemoteSourceApiKeyProvider {
 
 extension FirebaseSourceApiKeyProvider {
     static func make() -> Self {
-        FirebaseSourceApiKeyProvider(getKey: FirebaseDocumentProvider.getDocument)
+        .init(getKey: FirebaseDocumentProvider.getDocument)
     }
 }

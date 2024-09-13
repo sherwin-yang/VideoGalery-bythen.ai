@@ -12,7 +12,7 @@ enum GetApiKeyError: Error {
     case failToRetrieve
 }
 
-struct ApiKeyManager {
+final class ApiKeyManager {
     private var secureLocalSourceApiKeyManager: SecureLocalSourceApiKeyManagerProtocol
     private let getRemoteSourceApiKey: () async throws -> Keys
     
@@ -24,7 +24,7 @@ struct ApiKeyManager {
         self.getRemoteSourceApiKey = getRemoteSourceApiKey
     }
     
-    mutating func get() async throws -> ApiKey {
+    func get() async throws -> ApiKey {
         if let key = secureLocalSourceApiKeyManager.get() { return key }
         
         let remoteSourceKey = try await getRemoteSourceApiKey()
@@ -34,5 +34,12 @@ struct ApiKeyManager {
         else { throw GetApiKeyError.failToRetrieve }
         
         return localSourceKey
+    }
+}
+
+extension ApiKeyManager {
+    static func make() -> Self {
+        .init(secureLocalSourceApiKeyManager: SecureLocalSourceApiKeyManager.make(),
+              getRemoteSourceApiKey: FirebaseSourceApiKeyProvider.make().key)
     }
 }

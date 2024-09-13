@@ -14,7 +14,7 @@ final class CloudinaryURLBuilderTests: XCTestCase {
     func testCreateURL() {
         let path = String.random()
         let sut = CloudinaryURLBuilder(path: path)
-        XCTAssertEqual(sut.createURL()?.absoluteString, 
+        XCTAssertEqual(try? sut.build().absoluteString, 
                        "https://api.cloudinary.com/v1_1/dk3lhojel/\(path)")
     }
 
