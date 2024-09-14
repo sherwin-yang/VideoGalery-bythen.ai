@@ -67,7 +67,8 @@ final class ApiKeyManagerTest: XCTestCase {
         
         _ = try await sut.get()
         
-        XCTAssertEqual(secureLocalSourceApiKeyManagerMock.savedApiKey, remoteSourceApiKey.apiKey) 
+        XCTAssertEqual(secureLocalSourceApiKeyManagerMock.savedApiKey, remoteSourceApiKey.apiKey)
+        XCTAssertEqual(secureLocalSourceApiKeyManagerMock.savedApiSecret, remoteSourceApiKey.apiSecret)
     }
     
     func testGetKey_whenLocalSourceNeverReturnKey() async throws {

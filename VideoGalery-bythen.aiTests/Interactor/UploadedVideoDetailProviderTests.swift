@@ -33,10 +33,10 @@ final class UploadedVideoDetailProviderTests: XCTestCase {
         XCTAssertEqual(
             result,
             [.init(publicId: response.resources[0].publicId,
-                   secureUrl: response.resources[0].secureUrl,
+                   secureUrl: URL(string: response.resources[0].secureUrl)!,
                    createdAt: response.resources[0].createdAt),
              .init(publicId: response.resources[1].publicId,
-                   secureUrl: response.resources[1].secureUrl,
+                   secureUrl: URL(string: response.resources[1].secureUrl)!,
                    createdAt: response.resources[1].createdAt)]
         )
     }

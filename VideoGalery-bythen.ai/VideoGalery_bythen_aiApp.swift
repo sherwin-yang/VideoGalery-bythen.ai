@@ -23,7 +23,28 @@ struct VideoGalery_bythen_aiApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var delegate
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if EnvironmentVariable.isUnitTest {
+                TestingEnvEmptyView()
+            } else {
+                UploadedVideoListView()
+            }
         }
+    }
+}
+
+private struct TestingEnvEmptyView: View {
+    var body: some View {
+        VStack { }
+    }
+}
+
+private struct EnvironmentVariable {
+    static var isUnitTest: Bool {
+        let bundleKeyPath = envVar(key: "XCTestBundlePath") ?? ""
+        return bundleKeyPath.hasSuffix("VideoGalery-bythen.aiTests.xctest")
+    }
+    
+    private static func envVar(key: String) -> String? {
+        ProcessInfo.processInfo.environment[key]
     }
 }

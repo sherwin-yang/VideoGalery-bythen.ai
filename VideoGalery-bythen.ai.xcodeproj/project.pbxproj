@@ -27,8 +27,13 @@
 		2149A53D2C94EF260070EED5 /* Decodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A53C2C94EF260070EED5 /* Decodable+Extension.swift */; };
 		2149A53F2C9505F90070EED5 /* UploadedVideoDetailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A53E2C9505F90070EED5 /* UploadedVideoDetailProvider.swift */; };
 		2149A5412C9506DE0070EED5 /* UploadedVideoDetailProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5402C9506DE0070EED5 /* UploadedVideoDetailProviderTests.swift */; };
+		215BD3352C958A080038E6F9 /* UploadedVideoDetailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD3342C958A080038E6F9 /* UploadedVideoDetailListView.swift */; };
+		215BD3372C95A61C0038E6F9 /* VideoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD3362C95A61C0038E6F9 /* VideoPreviewView.swift */; };
+		215BD33D2C95A8F40038E6F9 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD33C2C95A8F40038E6F9 /* View+Extension.swift */; };
+		215DDE612C95769600923786 /* UploadedVideoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DDE602C95769600923786 /* UploadedVideoListViewModel.swift */; };
+		215DDE642C95788500923786 /* UploadedVideoListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DDE632C95788500923786 /* UploadedVideoListViewModelTests.swift */; };
 		21AF812A2C93059700376D1F /* VideoGalery_bythen_aiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF81292C93059700376D1F /* VideoGalery_bythen_aiApp.swift */; };
-		21AF812C2C93059700376D1F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF812B2C93059700376D1F /* ContentView.swift */; };
+		21AF812C2C93059700376D1F /* UploadedVideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF812B2C93059700376D1F /* UploadedVideoListView.swift */; };
 		21AF812E2C93059900376D1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21AF812D2C93059900376D1F /* Assets.xcassets */; };
 		21AF81312C93059900376D1F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21AF81302C93059900376D1F /* Preview Assets.xcassets */; };
 		21AF81452C93059A00376D1F /* VideoGalery_bythen_aiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF81442C93059A00376D1F /* VideoGalery_bythen_aiUITests.swift */; };
@@ -79,9 +84,14 @@
 		2149A53C2C94EF260070EED5 /* Decodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Extension.swift"; sourceTree = "<group>"; };
 		2149A53E2C9505F90070EED5 /* UploadedVideoDetailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedVideoDetailProvider.swift; sourceTree = "<group>"; };
 		2149A5402C9506DE0070EED5 /* UploadedVideoDetailProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedVideoDetailProviderTests.swift; sourceTree = "<group>"; };
+		215BD3342C958A080038E6F9 /* UploadedVideoDetailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedVideoDetailListView.swift; sourceTree = "<group>"; };
+		215BD3362C95A61C0038E6F9 /* VideoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPreviewView.swift; sourceTree = "<group>"; };
+		215BD33C2C95A8F40038E6F9 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		215DDE602C95769600923786 /* UploadedVideoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedVideoListViewModel.swift; sourceTree = "<group>"; };
+		215DDE632C95788500923786 /* UploadedVideoListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedVideoListViewModelTests.swift; sourceTree = "<group>"; };
 		21AF81262C93059700376D1F /* VideoGalery-bythen.ai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VideoGalery-bythen.ai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21AF81292C93059700376D1F /* VideoGalery_bythen_aiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGalery_bythen_aiApp.swift; sourceTree = "<group>"; };
-		21AF812B2C93059700376D1F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		21AF812B2C93059700376D1F /* UploadedVideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedVideoListView.swift; sourceTree = "<group>"; };
 		21AF812D2C93059900376D1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21AF81302C93059900376D1F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		21AF81362C93059A00376D1F /* VideoGalery-bythen.aiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VideoGalery-bythen.aiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +200,50 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		215BD3382C95A64D0038E6F9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				215DDE602C95769600923786 /* UploadedVideoListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		215BD33B2C95A8DF0038E6F9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				215BD33C2C95A8F40038E6F9 /* View+Extension.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		215DDE5E2C95764100923786 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				215DDE5F2C95767600923786 /* UploadedVideoList */,
+				215BD33B2C95A8DF0038E6F9 /* Helper */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		215DDE5F2C95767600923786 /* UploadedVideoList */ = {
+			isa = PBXGroup;
+			children = (
+				215BD3382C95A64D0038E6F9 /* ViewModel */,
+				21AF812B2C93059700376D1F /* UploadedVideoListView.swift */,
+				215BD3342C958A080038E6F9 /* UploadedVideoDetailListView.swift */,
+				215BD3362C95A61C0038E6F9 /* VideoPreviewView.swift */,
+			);
+			path = UploadedVideoList;
+			sourceTree = "<group>";
+		};
+		215DDE622C95787400923786 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				215DDE632C95788500923786 /* UploadedVideoListViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		21AF811D2C93059700376D1F = {
 			isa = PBXGroup;
 			children = (
@@ -214,7 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				21AF81292C93059700376D1F /* VideoGalery_bythen_aiApp.swift */,
-				21AF812B2C93059700376D1F /* ContentView.swift */,
+				215DDE5E2C95764100923786 /* View */,
 				2149A5172C94817F0070EED5 /* Interactor */,
 				2149A51C2C9483640070EED5 /* Adapter */,
 				21AF81532C93080900376D1F /* HTTPClient */,
@@ -238,6 +292,7 @@
 		21AF81392C93059A00376D1F /* VideoGalery-bythen.aiTests */ = {
 			isa = PBXGroup;
 			children = (
+				215DDE622C95787400923786 /* ViewModel */,
 				2149A51A2C94818F0070EED5 /* Interactor */,
 				2149A5322C94DDCA0070EED5 /* Adapter */,
 				21AF81562C93083000376D1F /* HTTPClient */,
@@ -414,18 +469,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				21AF81552C93082200376D1F /* HTTPRequest.swift in Sources */,
+				215BD3352C958A080038E6F9 /* UploadedVideoDetailListView.swift in Sources */,
 				21AF81B52C932FEA00376D1F /* CloudinaryURLBuilder.swift in Sources */,
 				2149A53D2C94EF260070EED5 /* Decodable+Extension.swift in Sources */,
-				21AF812C2C93059700376D1F /* ContentView.swift in Sources */,
+				21AF812C2C93059700376D1F /* UploadedVideoListView.swift in Sources */,
 				213D42DE2C9445EF00F57411 /* KeychainStore.swift in Sources */,
+				215BD3372C95A61C0038E6F9 /* VideoPreviewView.swift in Sources */,
 				2149A51E2C9483760070EED5 /* FirebaseDocumentProvider.swift in Sources */,
 				2149A53F2C9505F90070EED5 /* UploadedVideoDetailProvider.swift in Sources */,
+				215DDE612C95769600923786 /* UploadedVideoListViewModel.swift in Sources */,
 				2149A5202C94839C0070EED5 /* FirebaseSourceApiKeyProvider.swift in Sources */,
 				21AF812A2C93059700376D1F /* VideoGalery_bythen_aiApp.swift in Sources */,
 				2149A5182C94817F0070EED5 /* SecureLocalSourceApiKeyManager.swift in Sources */,
 				2149A5292C9499F80070EED5 /* ApiKeyManager.swift in Sources */,
 				2149A5312C94DAEA0070EED5 /* GetVideo.swift in Sources */,
 				21AF81BC2C93339C00376D1F /* APIURLRequest.swift in Sources */,
+				215BD33D2C95A8F40038E6F9 /* View+Extension.swift in Sources */,
 				2149A5362C94E7240070EED5 /* GetResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,6 +501,7 @@
 				21AF815B2C9309B900376D1F /* TestHelper.swift in Sources */,
 				2149A52F2C94A56F0070EED5 /* ApiKeyManagerTest.swift in Sources */,
 				2149A5252C948FDB0070EED5 /* FirebaseSourceApiKeyProviderIntegrationTests.swift in Sources */,
+				215DDE642C95788500923786 /* UploadedVideoListViewModelTests.swift in Sources */,
 				2149A5232C9488A70070EED5 /* FirebaseSourceApiKeyProviderTests.swift in Sources */,
 				21AF81B72C93301300376D1F /* CloudinaryURLBuilderTests.swift in Sources */,
 				2149A5382C94E7850070EED5 /* GetResponseTests.swift in Sources */,
