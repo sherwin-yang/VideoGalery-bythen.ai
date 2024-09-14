@@ -30,6 +30,12 @@
 		215BD3352C958A080038E6F9 /* UploadedVideoDetailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD3342C958A080038E6F9 /* UploadedVideoDetailListView.swift */; };
 		215BD3372C95A61C0038E6F9 /* VideoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD3362C95A61C0038E6F9 /* VideoPreviewView.swift */; };
 		215BD33D2C95A8F40038E6F9 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD33C2C95A8F40038E6F9 /* View+Extension.swift */; };
+		215BD3412C95CE090038E6F9 /* VideoRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD3402C95CE090038E6F9 /* VideoRecordingView.swift */; };
+		215BD3432C95D5D20038E6F9 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD3422C95D5D20038E6F9 /* CameraViewController.swift */; };
+		215BD3462C9608260038E6F9 /* AVCaptureSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD3452C9608260038E6F9 /* AVCaptureSession+Extension.swift */; };
+		215BD34B2C962C8D0038E6F9 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD34A2C962C8D0038E6F9 /* CloseButton.swift */; };
+		215BD34D2C962EBB0038E6F9 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD34C2C962EBB0038E6F9 /* VideoPlayerView.swift */; };
+		215BD34F2C962F8C0038E6F9 /* UploadVideoPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD34E2C962F8C0038E6F9 /* UploadVideoPreview.swift */; };
 		215DDE612C95769600923786 /* UploadedVideoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DDE602C95769600923786 /* UploadedVideoListViewModel.swift */; };
 		215DDE642C95788500923786 /* UploadedVideoListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DDE632C95788500923786 /* UploadedVideoListViewModelTests.swift */; };
 		21AF812A2C93059700376D1F /* VideoGalery_bythen_aiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF81292C93059700376D1F /* VideoGalery_bythen_aiApp.swift */; };
@@ -87,6 +93,12 @@
 		215BD3342C958A080038E6F9 /* UploadedVideoDetailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedVideoDetailListView.swift; sourceTree = "<group>"; };
 		215BD3362C95A61C0038E6F9 /* VideoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPreviewView.swift; sourceTree = "<group>"; };
 		215BD33C2C95A8F40038E6F9 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		215BD3402C95CE090038E6F9 /* VideoRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRecordingView.swift; sourceTree = "<group>"; };
+		215BD3422C95D5D20038E6F9 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		215BD3452C9608260038E6F9 /* AVCaptureSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureSession+Extension.swift"; sourceTree = "<group>"; };
+		215BD34A2C962C8D0038E6F9 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		215BD34C2C962EBB0038E6F9 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		215BD34E2C962F8C0038E6F9 /* UploadVideoPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoPreview.swift; sourceTree = "<group>"; };
 		215DDE602C95769600923786 /* UploadedVideoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedVideoListViewModel.swift; sourceTree = "<group>"; };
 		215DDE632C95788500923786 /* UploadedVideoListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedVideoListViewModelTests.swift; sourceTree = "<group>"; };
 		21AF81262C93059700376D1F /* VideoGalery-bythen.ai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VideoGalery-bythen.ai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,12 +204,13 @@
 			path = Adapter;
 			sourceTree = "<group>";
 		};
-		2149A53B2C94EEFD0070EED5 /* Helper */ = {
+		2149A53B2C94EEFD0070EED5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				2149A53C2C94EF260070EED5 /* Decodable+Extension.swift */,
+				215BD3452C9608260038E6F9 /* AVCaptureSession+Extension.swift */,
 			);
-			path = Helper;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		215BD3382C95A64D0038E6F9 /* ViewModel */ = {
@@ -216,10 +229,31 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		215BD33F2C95CDEF0038E6F9 /* VideoRecordingView */ = {
+			isa = PBXGroup;
+			children = (
+				215BD3402C95CE090038E6F9 /* VideoRecordingView.swift */,
+				215BD3422C95D5D20038E6F9 /* CameraViewController.swift */,
+				215BD34E2C962F8C0038E6F9 /* UploadVideoPreview.swift */,
+			);
+			path = VideoRecordingView;
+			sourceTree = "<group>";
+		};
+		215BD3492C962C7C0038E6F9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				215BD34A2C962C8D0038E6F9 /* CloseButton.swift */,
+				215BD34C2C962EBB0038E6F9 /* VideoPlayerView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		215DDE5E2C95764100923786 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				215BD3492C962C7C0038E6F9 /* Shared */,
 				215DDE5F2C95767600923786 /* UploadedVideoList */,
+				215BD33F2C95CDEF0038E6F9 /* VideoRecordingView */,
 				215BD33B2C95A8DF0038E6F9 /* Helper */,
 			);
 			path = View;
@@ -273,7 +307,7 @@
 				2149A51C2C9483640070EED5 /* Adapter */,
 				21AF81532C93080900376D1F /* HTTPClient */,
 				213D42DD2C9445EF00F57411 /* Repository */,
-				2149A53B2C94EEFD0070EED5 /* Helper */,
+				2149A53B2C94EEFD0070EED5 /* Extensions */,
 				21498BBC2C941BB9005FC3B0 /* GoogleService-Info.plist */,
 				21AF812D2C93059900376D1F /* Assets.xcassets */,
 				21AF812F2C93059900376D1F /* Preview Content */,
@@ -469,23 +503,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				21AF81552C93082200376D1F /* HTTPRequest.swift in Sources */,
+				215BD34B2C962C8D0038E6F9 /* CloseButton.swift in Sources */,
+				215BD3432C95D5D20038E6F9 /* CameraViewController.swift in Sources */,
 				215BD3352C958A080038E6F9 /* UploadedVideoDetailListView.swift in Sources */,
 				21AF81B52C932FEA00376D1F /* CloudinaryURLBuilder.swift in Sources */,
 				2149A53D2C94EF260070EED5 /* Decodable+Extension.swift in Sources */,
 				21AF812C2C93059700376D1F /* UploadedVideoListView.swift in Sources */,
 				213D42DE2C9445EF00F57411 /* KeychainStore.swift in Sources */,
+				215BD34F2C962F8C0038E6F9 /* UploadVideoPreview.swift in Sources */,
 				215BD3372C95A61C0038E6F9 /* VideoPreviewView.swift in Sources */,
+				215BD3412C95CE090038E6F9 /* VideoRecordingView.swift in Sources */,
 				2149A51E2C9483760070EED5 /* FirebaseDocumentProvider.swift in Sources */,
 				2149A53F2C9505F90070EED5 /* UploadedVideoDetailProvider.swift in Sources */,
 				215DDE612C95769600923786 /* UploadedVideoListViewModel.swift in Sources */,
 				2149A5202C94839C0070EED5 /* FirebaseSourceApiKeyProvider.swift in Sources */,
 				21AF812A2C93059700376D1F /* VideoGalery_bythen_aiApp.swift in Sources */,
+				215BD3462C9608260038E6F9 /* AVCaptureSession+Extension.swift in Sources */,
 				2149A5182C94817F0070EED5 /* SecureLocalSourceApiKeyManager.swift in Sources */,
 				2149A5292C9499F80070EED5 /* ApiKeyManager.swift in Sources */,
 				2149A5312C94DAEA0070EED5 /* GetVideo.swift in Sources */,
 				21AF81BC2C93339C00376D1F /* APIURLRequest.swift in Sources */,
 				215BD33D2C95A8F40038E6F9 /* View+Extension.swift in Sources */,
 				2149A5362C94E7240070EED5 /* GetResponse.swift in Sources */,
+				215BD34D2C962EBB0038E6F9 /* VideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,6 +705,7 @@
 				DEVELOPMENT_TEAM = 35HAL8HCRV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera Access Permission is Needed for Recording";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -694,6 +735,7 @@
 				DEVELOPMENT_TEAM = 35HAL8HCRV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera Access Permission is Needed for Recording";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

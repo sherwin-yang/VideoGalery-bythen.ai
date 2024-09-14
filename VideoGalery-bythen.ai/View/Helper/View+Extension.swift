@@ -12,4 +12,8 @@ extension View {
         if value { hidden() }
         else { self }
     }
+    
+    func cornerRadius(value: CGFloat) -> some View {
+        clipShape(RoundedRectangle(cornerRadius: value))
+    }
 }
