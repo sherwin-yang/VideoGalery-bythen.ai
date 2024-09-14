@@ -56,7 +56,7 @@ final class SecureLocalSourceApiKeyManagerTests: XCTestCase {
 private final class SecureStoreMock: SecureStoreProtocol {
     private var storage: [String: String]
     init(fillKeys: Bool = false) {
-        storage = fillKeys ? ["apiKey": String.random(), "apiSecret": String.random()] : [:]
+        storage = fillKeys ? ["apiKey": .random(), "apiSecret": .random()] : [:]
     }
     
     var apiKey: String? { storage["apiKey"] }

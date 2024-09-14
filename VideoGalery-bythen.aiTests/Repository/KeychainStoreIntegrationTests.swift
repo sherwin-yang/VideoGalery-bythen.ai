@@ -25,7 +25,7 @@ final class KeychainStoreIntegrationTests: XCTestCase {
         sut[key] = value
         XCTAssertEqual(sut[key], value)
         
-        value = String.random()
+        value = .random()
         sut[key] = value
         XCTAssertEqual(sut[key], value)
     }

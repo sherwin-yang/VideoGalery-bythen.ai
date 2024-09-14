@@ -16,7 +16,7 @@ final class ApiKeyManagerTest: XCTestCase {
         func test(fillApiKey: Bool, line: UInt = #line) async throws {
             let secureLocalSourceApiKeyManagerMock = SecureLocalSourceApiKeyManagerMock(apiKeyExist: fillApiKey)
             var getRemoteSourceApiKeyCalled = false
-            var sut = ApiKeyManager(
+            let sut = ApiKeyManager(
                 secureLocalSourceApiKeyManager: secureLocalSourceApiKeyManagerMock,
                 getRemoteSourceApiKey: {
                     getRemoteSourceApiKeyCalled = true
@@ -39,7 +39,7 @@ final class ApiKeyManagerTest: XCTestCase {
         
         let secureLocalSourceApiKeyManagerMock = SecureLocalSourceApiKeyManagerMock(apiKeyExist: false)
         let remoteSourceApiKey = Keys(apiKey: .random(), apiSecret: .random())
-        var sut = ApiKeyManager(
+        let sut = ApiKeyManager(
             secureLocalSourceApiKeyManager: secureLocalSourceApiKeyManagerMock,
             getRemoteSourceApiKey: {
                 actions.append(.getFromRemote)
@@ -60,7 +60,7 @@ final class ApiKeyManagerTest: XCTestCase {
     func testGetKey_shouldSaveKeyFromRemoteToLocal() async throws {
         let secureLocalSourceApiKeyManagerMock = SecureLocalSourceApiKeyManagerMock(apiKeyExist: false)
         let remoteSourceApiKey = Keys(apiKey: .random(), apiSecret: .random())
-        var sut = ApiKeyManager(
+        let sut = ApiKeyManager(
             secureLocalSourceApiKeyManager: secureLocalSourceApiKeyManagerMock,
             getRemoteSourceApiKey: { remoteSourceApiKey }
         )
@@ -71,7 +71,7 @@ final class ApiKeyManagerTest: XCTestCase {
     }
     
     func testGetKey_whenLocalSourceNeverReturnKey() async throws {
-        var sut = ApiKeyManager(
+        let sut = ApiKeyManager(
             secureLocalSourceApiKeyManager: AlwaysNilApiKeySecureLocalSourceApiKeyManager(),
             getRemoteSourceApiKey: { .init(apiKey: .random(), apiSecret: .random()) }
         )

@@ -26,6 +26,6 @@ final class RemoteSourceApiKeyProviderTests: XCTestCase {
 
 private extension Keys {
     static func dummy() -> Self {
-        Keys(apiKey: String.random(), apiSecret: String.random())
+        Keys(apiKey: .random(), apiSecret: .random())
     }
 }
