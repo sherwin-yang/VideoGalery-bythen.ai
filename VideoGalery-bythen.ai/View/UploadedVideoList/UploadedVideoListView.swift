@@ -81,7 +81,7 @@ struct UploadedVideoListView: View {
                     Button(
                         action: {
                             if viewModel.uploadVideoStatus == .failed {
-                                viewModel.retry()
+                                viewModel.retryUploadVideo()
                             }
                         },
                         label: {
