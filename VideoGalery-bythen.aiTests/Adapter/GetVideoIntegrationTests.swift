@@ -19,7 +19,7 @@ final class GetVideoIntegrationTests: XCTestCase {
         let sut = GetResponse(
             getData: GetVideo(
                 getAuthKey: ApiKeyManager.make().get,
-                getData: HTTPRequest.get
+                getData: HTTPRequest.makeRequest
             ).data,
             decoder: ResourcesResponse<[VideoResponse]>.decode
         )

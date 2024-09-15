@@ -41,6 +41,7 @@
 		215BD3632C966B0D0038E6F9 /* video_test.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 215BD3622C966B0D0038E6F9 /* video_test.MOV */; };
 		215BD3652C9683370038E6F9 /* VideoUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD3642C9683370038E6F9 /* VideoUploader.swift */; };
 		215BD3C22C96A40F0038E6F9 /* UploadVideoPreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD3C12C96A40F0038E6F9 /* UploadVideoPreviewViewModel.swift */; };
+		215BD3C42C96CC1F0038E6F9 /* DeleteVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD3C32C96CC1F0038E6F9 /* DeleteVideo.swift */; };
 		215DDE612C95769600923786 /* UploadedVideoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DDE602C95769600923786 /* UploadedVideoListViewModel.swift */; };
 		215DDE642C95788500923786 /* UploadedVideoListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DDE632C95788500923786 /* UploadedVideoListViewModelTests.swift */; };
 		21AF812A2C93059700376D1F /* VideoGalery_bythen_aiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF81292C93059700376D1F /* VideoGalery_bythen_aiApp.swift */; };
@@ -108,6 +109,7 @@
 		215BD3622C966B0D0038E6F9 /* video_test.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video_test.MOV; sourceTree = "<group>"; };
 		215BD3642C9683370038E6F9 /* VideoUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoUploader.swift; sourceTree = "<group>"; };
 		215BD3C12C96A40F0038E6F9 /* UploadVideoPreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoPreviewViewModel.swift; sourceTree = "<group>"; };
+		215BD3C32C96CC1F0038E6F9 /* DeleteVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteVideo.swift; sourceTree = "<group>"; };
 		215DDE602C95769600923786 /* UploadedVideoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedVideoListViewModel.swift; sourceTree = "<group>"; };
 		215DDE632C95788500923786 /* UploadedVideoListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedVideoListViewModelTests.swift; sourceTree = "<group>"; };
 		21AF81262C93059700376D1F /* VideoGalery-bythen.ai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VideoGalery-bythen.ai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +204,7 @@
 				2149A51D2C9483760070EED5 /* FirebaseDocumentProvider.swift */,
 				2149A5302C94DAEA0070EED5 /* GetVideo.swift */,
 				215BD35C2C965DC80038E6F9 /* PostVideo.swift */,
+				215BD3C32C96CC1F0038E6F9 /* DeleteVideo.swift */,
 			);
 			path = Adapter;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 			files = (
 				21AF81552C93082200376D1F /* HTTPRequest.swift in Sources */,
 				215BD35D2C965DC80038E6F9 /* PostVideo.swift in Sources */,
+				215BD3C42C96CC1F0038E6F9 /* DeleteVideo.swift in Sources */,
 				215BD34B2C962C8D0038E6F9 /* CloseButton.swift in Sources */,
 				215BD3432C95D5D20038E6F9 /* CameraViewController.swift in Sources */,
 				215BD3352C958A080038E6F9 /* UploadedVideoDetailListView.swift in Sources */,

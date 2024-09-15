@@ -8,9 +8,17 @@
 import SwiftUI
 
 struct UploadedVideoListView: View {
+    @Environment(\.dismiss) private var dismiss
     @ObservedObject private var viewModel = UploadedVideoListViewModel.make()
-    @State private var selectedItem: UploadedVideoDetail?
+    @State private var toPreviewSelectedItem: UploadedVideoDetail?
     @State private var isShowingRecordingScreen = false
+    @State private var toDeleteSelectedItem: UploadedVideoDetail?
+    @State private var didSelectedItemToDelete = false
+    @State private var isDeletingMode = false
+    
+    private var toDeleteItemPublicId: String {
+        toDeleteSelectedItem?.publicId ?? "(non existing public id)"
+    }
     
     var body: some View {
         NavigationStack {
@@ -32,12 +40,15 @@ struct UploadedVideoListView: View {
                 
                 UploadedVideoDetailListView(
                     videoDetails: viewModel.uploadedVideoDetail,
-                    videoSelection: $selectedItem
+                    toPreviewVideoSelection: $toPreviewSelectedItem, 
+                    toDeleteVideoSelection: $toDeleteSelectedItem,
+                    didSelectedItemToDelete: $didSelectedItemToDelete,
+                    isDeletingMode: $isDeletingMode
                 )
                 .isHidden(viewModel.isUploadedVideoListViewHidden)
             }
             .onAppear(perform: viewModel.viewAppear)
-            .fullScreenCover(item: $selectedItem) {
+            .fullScreenCover(item: $toPreviewSelectedItem) {
                 VideoPreviewView(videoURL: $0.secureUrl)
             }
             .fullScreenCover(
@@ -46,14 +57,38 @@ struct UploadedVideoListView: View {
                 content: { VideoRecordingView(isPresenting: $isShowingRecordingScreen) }
             )
             .toolbar {
-                Button(
-                    action: { isShowingRecordingScreen = true },
-                    label: {
-                        Image(systemName: "plus")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                    }
-                )
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(
+                        action: { isDeletingMode.toggle() },
+                        label: {
+                            if isDeletingMode {
+                                Text("Cancel")
+                            } else {
+                                Text("Delete")
+                                    .foregroundStyle(.red)
+                            }
+                        }
+                    )
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(
+                        action: { isShowingRecordingScreen = true },
+                        label: {
+                            Image(systemName: "plus")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                        }
+                    )
+                }
+            }
+            .alert("Confirm Deleting \(toDeleteItemPublicId)?", isPresented: $didSelectedItemToDelete) {
+                Button("Cancel") { dismiss() }
+                Button("Confirm") {
+                    viewModel.delete(item: toDeleteSelectedItem)
+                    dismiss()
+                }
+                .foregroundColor(.red)
             }
         }
     }

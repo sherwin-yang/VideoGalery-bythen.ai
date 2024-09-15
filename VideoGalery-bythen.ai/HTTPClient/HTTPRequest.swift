@@ -16,7 +16,7 @@ enum HTTPRequestError: Error, Equatable {
 struct HTTPRequest {
     static private let urlSession = URLSession.shared
     
-    static func get(urlRequest: URLRequest) async throws -> Data {
+    static func makeRequest(urlRequest: URLRequest) async throws -> Data {
         let (data, response) = try await urlSession.data(for: urlRequest)
         
         guard isRequestSuccess(response: response)

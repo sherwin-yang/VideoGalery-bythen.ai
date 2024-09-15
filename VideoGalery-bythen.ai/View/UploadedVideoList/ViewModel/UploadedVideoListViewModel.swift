@@ -9,6 +9,7 @@ import Foundation
 
 final class UploadedVideoListViewModel: ObservableObject {
     private let getUploadedVideoDetail: () async throws -> [UploadedVideoDetail]
+    private let deleteItem: (String) -> Void
     private var getUploadedVideoDetailTask: Task<(), Never>?
     
     @Published private(set) var uploadedVideoDetail: [UploadedVideoDetail] = []
@@ -17,8 +18,12 @@ final class UploadedVideoListViewModel: ObservableObject {
     @Published private(set) var isLoadingIndicatorHidden = false
     @Published private(set) var isRetryButtonHidden = true
     
-    init(getUploadedVideoDetail: @escaping () async throws -> [UploadedVideoDetail]) {
+    init(
+        getUploadedVideoDetail: @escaping () async throws -> [UploadedVideoDetail],
+        deleteItem: @escaping (String) -> Void
+    ) {
         self.getUploadedVideoDetail = getUploadedVideoDetail
+        self.deleteItem = deleteItem
     }
     
     deinit {
@@ -33,6 +38,12 @@ final class UploadedVideoListViewModel: ObservableObject {
         isLoadingIndicatorHidden = false
         isRetryButtonHidden = true
         loadGetUploadedVideoDetail()
+    }
+    
+    func delete(item: UploadedVideoDetail?) {
+        guard let item else { return }
+        deleteItem(item.publicId)
+        uploadedVideoDetail.removeAll { $0 == item }
     }
     
     private func loadGetUploadedVideoDetail() {
@@ -51,6 +62,7 @@ final class UploadedVideoListViewModel: ObservableObject {
 
 extension UploadedVideoListViewModel {
     static func make() -> Self {
-        .init(getUploadedVideoDetail: UploadedVideoDetailProvider.make().get)
+        .init(getUploadedVideoDetail: UploadedVideoDetailProvider.make().get, 
+              deleteItem: DeleteVideo.make().delete)
     }
 }

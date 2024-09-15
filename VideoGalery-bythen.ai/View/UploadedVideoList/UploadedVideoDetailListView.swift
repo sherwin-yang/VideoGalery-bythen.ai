@@ -9,7 +9,10 @@ import SwiftUI
 
 struct UploadedVideoDetailListView: View {
     var videoDetails: [UploadedVideoDetail]
-    @Binding var videoSelection: UploadedVideoDetail?
+    @Binding var toPreviewVideoSelection: UploadedVideoDetail?
+    @Binding var toDeleteVideoSelection: UploadedVideoDetail?
+    @Binding var didSelectedItemToDelete: Bool
+    @Binding var isDeletingMode: Bool
     
     var body: some View {
         List {
@@ -25,16 +28,27 @@ struct UploadedVideoDetailListView: View {
                     
                     Spacer()
                     
-                    Image(systemName: "play.circle.fill")
+                    isDeletingMode
+                    ? Image(systemName: "trash.fill")
                         .resizable()
                         .frame(width: 22, height: 22)
+                        .foregroundStyle(.red)
+                    : Image(systemName: "play.circle.fill")
+                        .resizable()
+                        .frame(width: 22, height: 22)
+                        .foregroundStyle(Color(.label))
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.horizontal, 20)
                 .padding(.vertical, 10)
                 .cardBackground()
                 .onTapGesture {
-                    videoSelection = videoDetails
+                    if isDeletingMode {
+                        toDeleteVideoSelection = videoDetails
+                        didSelectedItemToDelete = true
+                    } else {
+                        toPreviewVideoSelection = videoDetails
+                    }
                 }
             }
             .listRowSeparator(.hidden)
@@ -44,8 +58,15 @@ struct UploadedVideoDetailListView: View {
 }
 
 #Preview {
-    @State var videoSelection: UploadedVideoDetail?
-    return UploadedVideoDetailListView(videoDetails: [], videoSelection: $videoSelection)
+    @State var toPreviewVideoSelection: UploadedVideoDetail?
+    @State var toDeleteVideoSelection: UploadedVideoDetail?
+    @State var didSelectedItemToDelete = Bool.random()
+    @State var isDeletingMode = Bool.random()
+    return UploadedVideoDetailListView(videoDetails: [], 
+                                       toPreviewVideoSelection: $toPreviewVideoSelection, 
+                                       toDeleteVideoSelection: $toDeleteVideoSelection, 
+                                       didSelectedItemToDelete: $didSelectedItemToDelete,
+                                       isDeletingMode: $isDeletingMode)
 }
 
 private struct CardBackground: ViewModifier {

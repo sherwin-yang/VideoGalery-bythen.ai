@@ -13,9 +13,11 @@ enum CloudinaryURLBuilderError: Error {
 
 struct CloudinaryURLBuilder {
     private let path: String
+    private let param: [String: String]
     
-    init(path: String) {
+    init(path: String, param: [String: String] = [:]) {
         self.path = path
+        self.param = param
     }
     
     func build() throws -> URL {
@@ -29,6 +31,7 @@ struct CloudinaryURLBuilder {
         component.scheme = "https"
         component.host = "api.cloudinary.com"
         component.path = "/v1_1/dk3lhojel/\(path)"
+        component.queryItems = param.map { .init(name: $0.key, value: $0.value) }
         return component.url
     }
 }
