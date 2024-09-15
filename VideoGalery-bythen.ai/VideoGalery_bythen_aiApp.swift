@@ -16,6 +16,10 @@ private final class AppDelegate: NSObject, UIApplicationDelegate {
         FirebaseApp.configure()
         return true
     }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        VideoUploader.shared.cancel()
+    }
 }
 
 @main
