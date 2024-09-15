@@ -51,6 +51,9 @@ struct UploadedVideoListView: View {
                 .isHidden(viewModel.isUploadedVideoListViewHidden)
             }
             .onAppear(perform: viewModel.viewAppear)
+            .refreshable {
+                viewModel.loadGetUploadedVideoDetail()
+            }
             .fullScreenCover(item: $toPreviewSelectedItem) {
                 VideoPreviewView(videoURL: $0.secureUrl)
             }
@@ -74,6 +77,23 @@ struct UploadedVideoListView: View {
                     )
                 }
                 
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(
+                        action: {
+                            if viewModel.uploadVideoStatus == .failed {
+                                viewModel.retry()
+                            }
+                        },
+                        label: {
+                            if viewModel.uploadVideoStatus == .uploading {
+                                Text("Uploading...")
+                            } else if viewModel.uploadVideoStatus == .failed {
+                                Text("Retry")
+                            }
+                        }
+                    )
+                    .isHidden(viewModel.uploadVideoStatus == .success || viewModel.uploadVideoStatus == .none)
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(
                         action: {

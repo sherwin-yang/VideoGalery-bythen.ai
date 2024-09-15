@@ -31,7 +31,9 @@ struct CloudinaryURLBuilder {
         component.scheme = "https"
         component.host = "api.cloudinary.com"
         component.path = "/v1_1/dk3lhojel/\(path)"
-        component.queryItems = param.map { .init(name: $0.key, value: $0.value) }
+        if !param.isEmpty {
+            component.queryItems = param.map { .init(name: $0.key, value: $0.value) }
+        }
         return component.url
     }
 }

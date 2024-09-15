@@ -12,6 +12,7 @@ extension Notification.Name {
     static let uploadingVideo = Notification.Name("uploadingVideo")
     static let successUploadVideo = Notification.Name("successUploadVideo")
     static let failedUploadVideo = Notification.Name("failedUploadVideo")
+    static let cancelUploadVideo = Notification.Name("cancelUploadVideo")
 }
 
 class VideoUploader {
@@ -35,6 +36,11 @@ class VideoUploader {
                 NotificationCenter.default.post(name: .failedUploadVideo, object: nil, userInfo: [:])
             }
         }
+    }
+    
+    func retry() {
+        guard let filePath else { return }
+        upload(filePath: filePath)
     }
     
     func cancel() {

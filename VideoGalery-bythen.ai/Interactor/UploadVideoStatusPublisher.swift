@@ -23,6 +23,8 @@ class UploadVideoStatusPublisher {
     func observe() -> AnyPublisher<UploadVideoStatus, Never> {
         NotificationCenter.default.publisher(for: .successUploadVideo)
             .merge(with: NotificationCenter.default.publisher(for: .failedUploadVideo))
+            .merge(with: NotificationCenter.default.publisher(for: .uploadingVideo))
+            .merge(with: NotificationCenter.default.publisher(for: .cancelUploadVideo))
             .sink { [weak self ] in
                 guard let self else { return }
                 if $0.name == .successUploadVideo {
@@ -31,6 +33,8 @@ class UploadVideoStatusPublisher {
                     statusPublisher.send(.failed)
                 } else if $0.name == .uploadingVideo {
                     statusPublisher.send(.uploading)
+                } else if $0.name == .cancelUploadVideo {
+                    statusPublisher.send(.none)
                 }
             }
             .store(in: &cancellables)

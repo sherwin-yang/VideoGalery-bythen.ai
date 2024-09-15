@@ -12,6 +12,7 @@ final class UploadedVideoListViewModel: ObservableObject {
     private let getUploadedVideoDetail: () async throws -> [UploadedVideoDetail]
     private let deleteItem: (String) -> Void
     private let observeVideoUploading: () -> AnyPublisher<UploadVideoStatus, Never>
+    private let retryVideoUpload: () -> Void
     private let cancelLastUploadVideo: () -> Void
     private var getUploadedVideoDetailTask: Task<(), Never>?
     
@@ -21,17 +22,19 @@ final class UploadedVideoListViewModel: ObservableObject {
     @Published private(set) var isLoadingIndicatorHidden = false
     @Published private(set) var isRetryButtonHidden = true
     
-    var uploadVideoStatus = UploadVideoStatus.none
+    @Published private(set) var uploadVideoStatus = UploadVideoStatus.none
     
     init(
         getUploadedVideoDetail: @escaping () async throws -> [UploadedVideoDetail],
         deleteItem: @escaping (String) -> Void,
         observeVideoUploading: @escaping () -> AnyPublisher<UploadVideoStatus, Never>,
+        retryVideoUpload: @escaping () -> Void,
         cancelLastUploadVideo: @escaping () -> Void
     ) {
         self.getUploadedVideoDetail = getUploadedVideoDetail
         self.deleteItem = deleteItem
         self.observeVideoUploading = observeVideoUploading
+        self.retryVideoUpload = retryVideoUpload
         self.cancelLastUploadVideo = cancelLastUploadVideo
     }
     
@@ -44,6 +47,7 @@ final class UploadedVideoListViewModel: ObservableObject {
         loadGetUploadedVideoDetail()
         observeVideoUploading().sink { [weak self] in
             self?.uploadVideoStatus = $0
+            if $0 == .success { self?.loadGetUploadedVideoDetail() }
         }.store(in: &cancellable)
     }
     
@@ -59,18 +63,24 @@ final class UploadedVideoListViewModel: ObservableObject {
         uploadedVideoDetail.removeAll { $0 == item }
     }
     
+    func retryUploadVideo() {
+        retryVideoUpload()
+    }
+    
     func cancelUploadVideo() {
         cancelLastUploadVideo()
     }
     
-    private func loadGetUploadedVideoDetail() {
+    func loadGetUploadedVideoDetail() {
         getUploadedVideoDetailTask = Task { @MainActor [weak self] in
             do {
                 let videoDetail = try await self?.getUploadedVideoDetail()
                 self?.isUploadedVideoListViewHidden = false
                 self?.uploadedVideoDetail = videoDetail ?? []
             } catch {
-                self?.isRetryButtonHidden = false
+                if let self, uploadedVideoDetail.isEmpty {
+                    isRetryButtonHidden = false
+                }
             }
             self?.isLoadingIndicatorHidden = true
         }
@@ -79,9 +89,11 @@ final class UploadedVideoListViewModel: ObservableObject {
 
 extension UploadedVideoListViewModel {
     static func make() -> Self {
-        .init(getUploadedVideoDetail: UploadedVideoDetailProvider.make().get, 
-              deleteItem: DeleteVideo.make().delete, 
-              observeVideoUploading: UploadVideoStatusPublisher().observe, 
-              cancelLastUploadVideo: VideoUploader.shared.cancel)
+        let videoUploader = VideoUploader.shared
+        return .init(getUploadedVideoDetail: UploadedVideoDetailProvider.make().get,
+                     deleteItem: DeleteVideo.make().delete,
+                     observeVideoUploading: UploadVideoStatusPublisher().observe,
+                     retryVideoUpload: videoUploader.retry,
+                     cancelLastUploadVideo: videoUploader.cancel)
     }
 }
