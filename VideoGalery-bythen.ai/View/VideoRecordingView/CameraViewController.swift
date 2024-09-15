@@ -79,7 +79,7 @@ class CameraViewController: UIViewController {
             return
         }
         
-        let fileName = "Recording " + UUID().uuidString
+        let fileName = "Recording_" + UUID().uuidString
         let filePath = directoryPath
             .appendingPathComponent(fileName)
             .appendingPathExtension("mp4")

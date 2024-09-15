@@ -43,7 +43,7 @@ struct UploadedVideoListView: View {
             .fullScreenCover(
                 isPresented: $isShowingRecordingScreen,
                 onDismiss: { isShowingRecordingScreen = false },
-                content: { VideoRecordingView() }
+                content: { VideoRecordingView(isPresenting: $isShowingRecordingScreen) }
             )
             .toolbar {
                 Button(

@@ -35,7 +35,12 @@
 		215BD3462C9608260038E6F9 /* AVCaptureSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD3452C9608260038E6F9 /* AVCaptureSession+Extension.swift */; };
 		215BD34B2C962C8D0038E6F9 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD34A2C962C8D0038E6F9 /* CloseButton.swift */; };
 		215BD34D2C962EBB0038E6F9 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD34C2C962EBB0038E6F9 /* VideoPlayerView.swift */; };
-		215BD34F2C962F8C0038E6F9 /* UploadVideoPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD34E2C962F8C0038E6F9 /* UploadVideoPreview.swift */; };
+		215BD34F2C962F8C0038E6F9 /* UploadVideoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD34E2C962F8C0038E6F9 /* UploadVideoPreviewView.swift */; };
+		215BD35B2C965D9A0038E6F9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 215BD35A2C965D9A0038E6F9 /* Alamofire */; };
+		215BD35D2C965DC80038E6F9 /* PostVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD35C2C965DC80038E6F9 /* PostVideo.swift */; };
+		215BD3632C966B0D0038E6F9 /* video_test.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 215BD3622C966B0D0038E6F9 /* video_test.MOV */; };
+		215BD3652C9683370038E6F9 /* VideoUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD3642C9683370038E6F9 /* VideoUploader.swift */; };
+		215BD3C22C96A40F0038E6F9 /* UploadVideoPreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD3C12C96A40F0038E6F9 /* UploadVideoPreviewViewModel.swift */; };
 		215DDE612C95769600923786 /* UploadedVideoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DDE602C95769600923786 /* UploadedVideoListViewModel.swift */; };
 		215DDE642C95788500923786 /* UploadedVideoListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DDE632C95788500923786 /* UploadedVideoListViewModelTests.swift */; };
 		21AF812A2C93059700376D1F /* VideoGalery_bythen_aiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF81292C93059700376D1F /* VideoGalery_bythen_aiApp.swift */; };
@@ -98,7 +103,11 @@
 		215BD3452C9608260038E6F9 /* AVCaptureSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureSession+Extension.swift"; sourceTree = "<group>"; };
 		215BD34A2C962C8D0038E6F9 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		215BD34C2C962EBB0038E6F9 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
-		215BD34E2C962F8C0038E6F9 /* UploadVideoPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoPreview.swift; sourceTree = "<group>"; };
+		215BD34E2C962F8C0038E6F9 /* UploadVideoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoPreviewView.swift; sourceTree = "<group>"; };
+		215BD35C2C965DC80038E6F9 /* PostVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVideo.swift; sourceTree = "<group>"; };
+		215BD3622C966B0D0038E6F9 /* video_test.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video_test.MOV; sourceTree = "<group>"; };
+		215BD3642C9683370038E6F9 /* VideoUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoUploader.swift; sourceTree = "<group>"; };
+		215BD3C12C96A40F0038E6F9 /* UploadVideoPreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoPreviewViewModel.swift; sourceTree = "<group>"; };
 		215DDE602C95769600923786 /* UploadedVideoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedVideoListViewModel.swift; sourceTree = "<group>"; };
 		215DDE632C95788500923786 /* UploadedVideoListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedVideoListViewModelTests.swift; sourceTree = "<group>"; };
 		21AF81262C93059700376D1F /* VideoGalery-bythen.ai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VideoGalery-bythen.ai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				213D42D82C9442CF00F57411 /* FirebaseFirestore in Frameworks */,
+				215BD35B2C965D9A0038E6F9 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +178,7 @@
 				2149A5162C94817F0070EED5 /* SecureLocalSourceApiKeyManager.swift */,
 				2149A51F2C94839C0070EED5 /* FirebaseSourceApiKeyProvider.swift */,
 				2149A53E2C9505F90070EED5 /* UploadedVideoDetailProvider.swift */,
+				215BD3642C9683370038E6F9 /* VideoUploader.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -190,6 +201,7 @@
 				2149A5352C94E7240070EED5 /* GetResponse.swift */,
 				2149A51D2C9483760070EED5 /* FirebaseDocumentProvider.swift */,
 				2149A5302C94DAEA0070EED5 /* GetVideo.swift */,
+				215BD35C2C965DC80038E6F9 /* PostVideo.swift */,
 			);
 			path = Adapter;
 			sourceTree = "<group>";
@@ -232,9 +244,10 @@
 		215BD33F2C95CDEF0038E6F9 /* VideoRecordingView */ = {
 			isa = PBXGroup;
 			children = (
+				215BD3C02C96A3A10038E6F9 /* ViewModel */,
 				215BD3402C95CE090038E6F9 /* VideoRecordingView.swift */,
 				215BD3422C95D5D20038E6F9 /* CameraViewController.swift */,
-				215BD34E2C962F8C0038E6F9 /* UploadVideoPreview.swift */,
+				215BD34E2C962F8C0038E6F9 /* UploadVideoPreviewView.swift */,
 			);
 			path = VideoRecordingView;
 			sourceTree = "<group>";
@@ -246,6 +259,14 @@
 				215BD34C2C962EBB0038E6F9 /* VideoPlayerView.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		215BD3C02C96A3A10038E6F9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				215BD3C12C96A40F0038E6F9 /* UploadVideoPreviewViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		215DDE5E2C95764100923786 /* View */ = {
@@ -310,6 +331,7 @@
 				2149A53B2C94EEFD0070EED5 /* Extensions */,
 				21498BBC2C941BB9005FC3B0 /* GoogleService-Info.plist */,
 				21AF812D2C93059900376D1F /* Assets.xcassets */,
+				215BD3622C966B0D0038E6F9 /* video_test.MOV */,
 				21AF812F2C93059900376D1F /* Preview Content */,
 			);
 			path = "VideoGalery-bythen.ai";
@@ -383,6 +405,7 @@
 			name = "VideoGalery-bythen.ai";
 			packageProductDependencies = (
 				213D42D72C9442CF00F57411 /* FirebaseFirestore */,
+				215BD35A2C965D9A0038E6F9 /* Alamofire */,
 			);
 			productName = "VideoGalery-bythen.ai";
 			productReference = 21AF81262C93059700376D1F /* VideoGalery-bythen.ai.app */;
@@ -458,6 +481,7 @@
 			mainGroup = 21AF811D2C93059700376D1F;
 			packageReferences = (
 				213D42D62C9442CF00F57411 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				215BD3592C965D9A0038E6F9 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 21AF81272C93059700376D1F /* Products */;
 			projectDirPath = "";
@@ -476,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21AF81312C93059900376D1F /* Preview Assets.xcassets in Resources */,
+				215BD3632C966B0D0038E6F9 /* video_test.MOV in Resources */,
 				21498BBD2C941BB9005FC3B0 /* GoogleService-Info.plist in Resources */,
 				21AF812E2C93059900376D1F /* Assets.xcassets in Resources */,
 			);
@@ -503,6 +528,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21AF81552C93082200376D1F /* HTTPRequest.swift in Sources */,
+				215BD35D2C965DC80038E6F9 /* PostVideo.swift in Sources */,
 				215BD34B2C962C8D0038E6F9 /* CloseButton.swift in Sources */,
 				215BD3432C95D5D20038E6F9 /* CameraViewController.swift in Sources */,
 				215BD3352C958A080038E6F9 /* UploadedVideoDetailListView.swift in Sources */,
@@ -510,10 +536,11 @@
 				2149A53D2C94EF260070EED5 /* Decodable+Extension.swift in Sources */,
 				21AF812C2C93059700376D1F /* UploadedVideoListView.swift in Sources */,
 				213D42DE2C9445EF00F57411 /* KeychainStore.swift in Sources */,
-				215BD34F2C962F8C0038E6F9 /* UploadVideoPreview.swift in Sources */,
+				215BD34F2C962F8C0038E6F9 /* UploadVideoPreviewView.swift in Sources */,
 				215BD3372C95A61C0038E6F9 /* VideoPreviewView.swift in Sources */,
 				215BD3412C95CE090038E6F9 /* VideoRecordingView.swift in Sources */,
 				2149A51E2C9483760070EED5 /* FirebaseDocumentProvider.swift in Sources */,
+				215BD3652C9683370038E6F9 /* VideoUploader.swift in Sources */,
 				2149A53F2C9505F90070EED5 /* UploadedVideoDetailProvider.swift in Sources */,
 				215DDE612C95769600923786 /* UploadedVideoListViewModel.swift in Sources */,
 				2149A5202C94839C0070EED5 /* FirebaseSourceApiKeyProvider.swift in Sources */,
@@ -521,6 +548,7 @@
 				215BD3462C9608260038E6F9 /* AVCaptureSession+Extension.swift in Sources */,
 				2149A5182C94817F0070EED5 /* SecureLocalSourceApiKeyManager.swift in Sources */,
 				2149A5292C9499F80070EED5 /* ApiKeyManager.swift in Sources */,
+				215BD3C22C96A40F0038E6F9 /* UploadVideoPreviewViewModel.swift in Sources */,
 				2149A5312C94DAEA0070EED5 /* GetVideo.swift in Sources */,
 				21AF81BC2C93339C00376D1F /* APIURLRequest.swift in Sources */,
 				215BD33D2C95A8F40038E6F9 /* View+Extension.swift in Sources */,
@@ -880,6 +908,14 @@
 				version = 11.2.0;
 			};
 		};
+		215BD3592C965D9A0038E6F9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = exactVersion;
+				version = 5.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -887,6 +923,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 213D42D62C9442CF00F57411 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		215BD35A2C965D9A0038E6F9 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 215BD3592C965D9A0038E6F9 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

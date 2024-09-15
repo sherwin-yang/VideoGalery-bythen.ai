@@ -26,6 +26,8 @@ struct VideoRecordingView: View {
     @State private var alertMessage: String?
     @Environment(\.dismiss) private var dismiss
     
+    @Binding var isPresenting: Bool
+    
     var body: some View {
         VStack {
             HStack {
@@ -62,7 +64,7 @@ struct VideoRecordingView: View {
             )
         }
         .fullScreenCover(item: $videoRecordingResultPath) {
-            UploadVideoPreview(videoURL: $0.url)
+            UploadVideoPreviewView(isPresentingVideoRecordingView: $isPresenting, videoURL: $0.url)
         }
         .alert(alertMessage ?? "", isPresented: $isPresentingAlert) {
             Button("Dismiss") { dismiss() }
@@ -71,6 +73,7 @@ struct VideoRecordingView: View {
 }
 
 #Preview {
-    VideoRecordingView()
+    @State var isPresenting = true
+    return VideoRecordingView(isPresenting: $isPresenting)
 }
 
