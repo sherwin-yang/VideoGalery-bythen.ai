@@ -21,10 +21,16 @@ struct VideoMultipartFormData {
     let contentType: String
 }
 
-struct PostVideo {
-    typealias CompletionBlock = (Data?) -> Void
+protocol PostVideoProtocol {
     typealias isSuccess = Bool
+    
+    func post(filePath: URL, onComplete: @escaping (isSuccess) -> Void)
+    func cancelUploadTask()
+}
 
+class PostVideo: PostVideoProtocol {
+    typealias CompletionBlock = (Data?) -> Void
+    
     private let getAuthKey: () async throws -> ApiKey
     private let uploadVideo: (MultipartFormDataURLRequest, VideoMultipartFormData, @escaping CompletionBlock) -> Void
     
@@ -36,8 +42,10 @@ struct PostVideo {
         self.uploadVideo = uploadVideo
     }
     
+    private var uploadVideoTask: Task<(), Never>?
+    
     func post(filePath: URL, onComplete: @escaping (isSuccess) -> Void) {
-        Task {
+        uploadVideoTask = Task {
             guard let authKey = try? await getAuthKey(),
                   let fileData = try? Data(contentsOf: filePath),
                   let intApiKey = Int(authKey.apiKey),
@@ -64,10 +72,14 @@ struct PostVideo {
             )
         }
     }
+    
+    func cancelUploadTask() {
+        uploadVideoTask?.cancel()
+    }
 }
 
 extension PostVideo {
-    static func make() -> Self {
+    static func make() -> PostVideo {
         .init(
             getAuthKey: ApiKeyManager.make().get,
             uploadVideo: { multipartFormDataURLRequest, videoMultipartFormData, completionBlock in

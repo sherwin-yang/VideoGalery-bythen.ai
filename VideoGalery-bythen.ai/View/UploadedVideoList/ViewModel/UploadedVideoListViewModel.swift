@@ -6,10 +6,13 @@
 //
 
 import Foundation
+import Combine
 
 final class UploadedVideoListViewModel: ObservableObject {
     private let getUploadedVideoDetail: () async throws -> [UploadedVideoDetail]
     private let deleteItem: (String) -> Void
+    private let observeVideoUploading: () -> AnyPublisher<UploadVideoStatus, Never>
+    private let cancelLastUploadVideo: () -> Void
     private var getUploadedVideoDetailTask: Task<(), Never>?
     
     @Published private(set) var uploadedVideoDetail: [UploadedVideoDetail] = []
@@ -18,20 +21,30 @@ final class UploadedVideoListViewModel: ObservableObject {
     @Published private(set) var isLoadingIndicatorHidden = false
     @Published private(set) var isRetryButtonHidden = true
     
+    var uploadVideoStatus = UploadVideoStatus.none
+    
     init(
         getUploadedVideoDetail: @escaping () async throws -> [UploadedVideoDetail],
-        deleteItem: @escaping (String) -> Void
+        deleteItem: @escaping (String) -> Void,
+        observeVideoUploading: @escaping () -> AnyPublisher<UploadVideoStatus, Never>,
+        cancelLastUploadVideo: @escaping () -> Void
     ) {
         self.getUploadedVideoDetail = getUploadedVideoDetail
         self.deleteItem = deleteItem
+        self.observeVideoUploading = observeVideoUploading
+        self.cancelLastUploadVideo = cancelLastUploadVideo
     }
     
     deinit {
         getUploadedVideoDetailTask?.cancel()
     }
     
+    private var cancellable = Set<AnyCancellable>()
     func viewAppear() {
         loadGetUploadedVideoDetail()
+        observeVideoUploading().sink { [weak self] in
+            self?.uploadVideoStatus = $0
+        }.store(in: &cancellable)
     }
     
     func retry() {
@@ -44,6 +57,10 @@ final class UploadedVideoListViewModel: ObservableObject {
         guard let item else { return }
         deleteItem(item.publicId)
         uploadedVideoDetail.removeAll { $0 == item }
+    }
+    
+    func cancelUploadVideo() {
+        cancelLastUploadVideo()
     }
     
     private func loadGetUploadedVideoDetail() {
@@ -63,6 +80,8 @@ final class UploadedVideoListViewModel: ObservableObject {
 extension UploadedVideoListViewModel {
     static func make() -> Self {
         .init(getUploadedVideoDetail: UploadedVideoDetailProvider.make().get, 
-              deleteItem: DeleteVideo.make().delete)
+              deleteItem: DeleteVideo.make().delete, 
+              observeVideoUploading: UploadVideoStatusPublisher().observe, 
+              cancelLastUploadVideo: VideoUploader.shared.cancel)
     }
 }

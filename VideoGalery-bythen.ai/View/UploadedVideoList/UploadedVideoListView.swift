@@ -10,11 +10,14 @@ import SwiftUI
 struct UploadedVideoListView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject private var viewModel = UploadedVideoListViewModel.make()
+    
     @State private var toPreviewSelectedItem: UploadedVideoDetail?
     @State private var isShowingRecordingScreen = false
     @State private var toDeleteSelectedItem: UploadedVideoDetail?
     @State private var didSelectedItemToDelete = false
     @State private var isDeletingMode = false
+    
+    @State private var showWarningDeletingLastVideoRecording = false
     
     private var toDeleteItemPublicId: String {
         toDeleteSelectedItem?.publicId ?? "(non existing public id)"
@@ -40,7 +43,7 @@ struct UploadedVideoListView: View {
                 
                 UploadedVideoDetailListView(
                     videoDetails: viewModel.uploadedVideoDetail,
-                    toPreviewVideoSelection: $toPreviewSelectedItem, 
+                    toPreviewVideoSelection: $toPreviewSelectedItem,
                     toDeleteVideoSelection: $toDeleteSelectedItem,
                     didSelectedItemToDelete: $didSelectedItemToDelete,
                     isDeletingMode: $isDeletingMode
@@ -73,7 +76,13 @@ struct UploadedVideoListView: View {
                 
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(
-                        action: { isShowingRecordingScreen = true },
+                        action: {
+                            if viewModel.uploadVideoStatus == .uploading || viewModel.uploadVideoStatus == .failed {
+                                showWarningDeletingLastVideoRecording = true
+                            } else {
+                                isShowingRecordingScreen = true
+                            }
+                        },
                         label: {
                             Image(systemName: "plus")
                                 .resizable()
@@ -89,6 +98,16 @@ struct UploadedVideoListView: View {
                     dismiss()
                 }
                 .foregroundColor(.red)
+            }
+            .alert(
+                "Do you wish to DELETE/CANCEL your last uploading video and continue to record NEW video",
+                isPresented: $showWarningDeletingLastVideoRecording)
+            {
+                Button("No") { dismiss() }
+                Button("Yes") {
+                    isShowingRecordingScreen = true
+                    dismiss()
+                }
             }
         }
     }
