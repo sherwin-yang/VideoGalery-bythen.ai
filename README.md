@@ -1,7 +1,7 @@
 # Contents
 * [Overview](#Overview): Features, Architecture, and Assumptions
 * [More About Architectures](#More-About-Architectures)
-* [More About User-Defined Packages and Systems](#More-About-User-Defined-Package-and-Systems)
+* [More About User Defined Packages and Systems](#More-About-User-Defined-Packages-and-Systems)
 
 # Overview
 ## Features
@@ -12,9 +12,9 @@ All views are supporting light and dark mode.
     <th>Retry Load Uploaded Videos</th>
   </tr>
   <tr>
-    <td><img src="README_Assets/VideoList.jpeg" height="720" alt="Show List of Uploaded Videos"></td>
+    <td><img src="README_Assets/VideoList.jpeg" width="332" alt="Show List of Uploaded Videos"></td>
     <td>
-    <video height="720" controls>
+    <video width="332" controls>
     <source src="README_Assets/720RetryLoadUploadedVideos.mp4" type="video/mp4">
     Your browser does not support the video tag.
     </video>
@@ -27,13 +27,13 @@ All views are supporting light and dark mode.
   </tr>
   <tr>
     <td>
-    <video height="720" controls>
+    <video width="332" controls>
     <source src="README_Assets/720UploadVideo.mp4" type="video/mp4">
     Your browser does not support the video tag.
     </video>
     </td>
     <td>
-    <video height="720" controls>
+    <video width="332" controls>
     <source src="README_Assets/720RetryUploadVideo.mp4" type="video/mp4">
     Your browser does not support the video tag.
     </video>
@@ -46,13 +46,13 @@ All views are supporting light and dark mode.
   </tr>
   <tr>
     <td>
-    <video height="720" controls>
+    <video width="332" controls>
     <source src="README_Assets/720DeleteVideo.mp4" type="video/mp4">
     Your browser does not support the video tag.
     </video>
     </td>
     <td>
-    <video height="720" controls>
+    <video width="332" controls>
     <source src="README_Assets/720DeleteLastAndUploadNewVideo.mp4" type="video/mp4">
     Your browser does not support the video tag.
     </video>
@@ -71,7 +71,7 @@ All views are supporting light and dark mode.
 * **Adapter:** Interacts with other parties, making network request, etc.
 * **Other Libary/Package/Module:** This can be user-defined, 3rd party, or Apple-built in.
  
-See [More About Architectures](#More-About-Architectures) or [More About User-Defined Packages and Systems](#More-About-User-Defined-Packages-and-Systems) for more implementation details
+See [More About Architectures](#More-About-Architectures) or [More About User Defined Packages and Systems](#More-About-User-Defined-Packages-and-Systems) for more implementation details
 
 ## Assumptions
 * **Concept:** As a Galery App, it can be nice if there is some kind of visual representation of the videos when user is viewing and selecting the video for a preview. However, since image preview is not provided by the API, `public_id` and `created_at` are the representation of the videos information. Although generating image previews from the video might be achievable, with the limited time and also to load all the videos upfront can be inefficient, the other solution might be wiser.
@@ -80,7 +80,7 @@ See [More About Architectures](#More-About-Architectures) or [More About User-De
 
 # More About Architectures
 ## `VideoGaleryView`
-<img src="README_Assets/VideoGaleryView.jpg" height="600" alt="VideoGaleryView">
+<img src="README_Assets/VideoGaleryView.jpg" alt="VideoGaleryView">
 
 **Navigates to:**
 * `VideoPreviewView`
@@ -97,7 +97,7 @@ Wrapping `CameraViewController` through `UIViewControllerRepresentable`. Use `AV
 * `UploadVideoPreviewView`: [open details](#UploadVideoPreviewView)
 
 ## UploadVideoPreviewView
-<img src="README_Assets/UploadVideoPreviewView.jpg" height="250" alt="UploadVideoPreviewView">
+<img src="README_Assets/UploadVideoPreviewView.jpg" alt="UploadVideoPreviewView">
 
 *Upload Request using Alomofire*
 
@@ -105,13 +105,13 @@ Wrapping `CameraViewController` through `UIViewControllerRepresentable`. Use `AV
 * [ApiKeyProvider](#ApiKeyProvider)
 * [HTTPClient](#HTTPClient)
 
-# More About User-Defined Packages and Systems
+# More About User Defined Packages and Systems
 ## `ApiKeyProvider`
 Safe mechanism to retrieve Authentication information:
 * `api_key` and `api_secret` are stored in Firebase (this is not necessarily the best practice of storing credential information, but only to perform safe retrieving secret information that shouldn't be exposed in the codebase).
 * It will only get the secret keys from remote(Firebase) once if it hasn't been stored in keychain. After that, it will be stored in safe local storage(Keychain) and the secret keys will be retrieved from safe local storage only.
 
-<img src="README_Assets/ApiKeyProvider.jpg" height="200" alt="ApiKeyProvider">
+<img src="README_Assets/ApiKeyProvider.jpg" alt="ApiKeyProvider">
 
 ## `HTTPClient`
 Consist of:
@@ -120,7 +120,7 @@ Consist of:
 * `CloudinaryURLBuilder`: to construct `URL` for `api.cloudinary.com` endpoints.
 
 ## Video Uploading System
-<img src="README_Assets/UploadVideoSystem.jpg" height="250" alt="Upload Video System">
+<img src="README_Assets/UploadVideoSystem.jpg" alt="Upload Video System">
 
 * `VideoUploader`: 
     * Make upload request
