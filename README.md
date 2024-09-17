@@ -88,7 +88,7 @@ Consist of:
     * Cancel upload request
     * Remove video file when necessary
     * Notify video uploading status through `NotificationCenter`
-* `UploadVideoStatusPublisher`
+* `UploadVideoStatusPublisher`:
     * Observe `NotificationCenter` to publish `UploadVideoStatus`
     ```
     enum UploadVideoStatus {
