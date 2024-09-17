@@ -35,7 +35,7 @@ See [More About Architectures](#More-About-Architectures) or [More About User De
 
 ## Assumptions
 * **Concept:** As a Galery App, it can be nice if there is some kind of visual representation of the videos when user is viewing and selecting the video for a preview. However, since image preview is not provided by the API, `public_id` and `created_at` are the representation of the videos information. Although generating image previews from the video might be achievable, with the limited time and also to load all the videos upfront can be inefficient, the other solution might be wiser.
-* **Safe API Credentials Store:** `api_key` and `api_secret` are supposedly a secret information that should not be exposed in the codebase. So to prevent that, [ApiKeyProvider](#ApiKeyProvider) package is built for that concern.
+* **Secure API Credentials Store:** `api_key` and `api_secret` are supposedly a secret information that should not be exposed in the codebase. So to prevent that, [ApiKeyProvider](#ApiKeyProvider) package is built for that concern.
 * **1 Video Upload at a time:** The app is now only supporting for uploading a video at a time considering limited time since it can add a lot more complications to handle multiple video uploading system. To upload a new video, the user needs to cancel and delete previous unfinished uploading video if any.
 
 # More About Architectures
@@ -67,9 +67,9 @@ Wrapping `CameraViewController` through `UIViewControllerRepresentable`. Use `AV
 
 # More About User Defined Packages and Systems
 ## `ApiKeyProvider`
-Safe mechanism to retrieve Authentication information:
-* `api_key` and `api_secret` are stored in Firebase (this is not necessarily the best practice of storing credential information, but only to perform safe retrieving secret information that shouldn't be exposed in the codebase).
-* It will only get the secret keys from remote(Firebase) once if it hasn't been stored in keychain. After that, it will be stored in safe local storage(Keychain) and the secret keys will be retrieved from safe local storage only.
+Secure mechanism to retrieve Authentication information:
+* `api_key` and `api_secret` are stored in Firebase (this is not necessarily the best practice of storing credential information, but only to perform secure retrieval of secret information that shouldn't be exposed in the codebase).
+* It will only get the auth keys from remote (Firebase) once if it hasn't been stored in keychain. After that, it will be stored in secure local storage (Keychain) and the auth keys will be retrieved from secure local storage only.
 
 <img src="README_Assets/ApiKeyProvider.jpg" alt="ApiKeyProvider">
 
