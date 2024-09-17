@@ -1,5 +1,5 @@
 //
-//  UploadedVideoDetailProvider.swift
+//  VideoDetailsProvider.swift
 //  VideoGalery-bythen.ai
 //
 //  Created by Sherwin Yang on 9/14/24.
@@ -7,23 +7,23 @@
 
 import Foundation
 
-struct UploadedVideoDetail: Equatable, Identifiable, Hashable {
+struct VideoDetail: Equatable, Identifiable, Hashable {
     var id = UUID()
     let publicId: String
     let secureUrl: URL
     let createdAt: String
 }
 
-struct UploadedVideoDetailProvider {
+struct VideoDetailsProvider {
     private let request: () async throws -> ResourcesResponse<[VideoResponse]>
     
     init(request: @escaping () async throws -> ResourcesResponse<[VideoResponse]>) {
         self.request = request
     }
     
-    func get() async throws -> [UploadedVideoDetail] {
+    func get() async throws -> [VideoDetail] {
         let response = try await request()
-        var uploadedVideoDetail: [UploadedVideoDetail] = []
+        var uploadedVideoDetail: [VideoDetail] = []
         response.resources.forEach {
             if let secureUrl = URL(string: $0.secureUrl) {
                 uploadedVideoDetail.append(
@@ -38,12 +38,12 @@ struct UploadedVideoDetailProvider {
     }
 }
 
-extension UploadedVideoDetailProvider {
+extension VideoDetailsProvider {
     static func make() -> Self{
         return .init(
             request: GetResponse(
                 getData: GetVideo(
-                    getAuthKey: ApiKeyManager.make().get,
+                    getAuthKey: ApiKeyProvider.make().get,
                     getData: HTTPRequest.makeRequest
                 ).data,
                 decoder: ResourcesResponse<[VideoResponse]>.decode

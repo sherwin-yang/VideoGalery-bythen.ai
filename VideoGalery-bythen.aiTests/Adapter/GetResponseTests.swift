@@ -15,7 +15,7 @@ final class GetResponseTests: XCTestCase {
         var getDataCalled = false
         var passedData: Data?
         let data = Data(count: .random())
-        let sut = GetResponse.make(
+        let sut = GetResponse.makeSUT(
             getData: { getDataCalled = true; return data },
             decoder: { passedData = $0; return StubResponse() }
         )
@@ -28,7 +28,7 @@ final class GetResponseTests: XCTestCase {
     
     func testFetch_shouldReturnResponseFromDecoder() async throws {
         let response = StubResponse()
-        let sut = GetResponse.make(decoder: { _ in response })
+        let sut = GetResponse.makeSUT(decoder: { _ in response })
         
         let result = try await sut.fetch()
         
@@ -36,7 +36,7 @@ final class GetResponseTests: XCTestCase {
     }
     
     func testFetch_whenGetDataThrewError_shouldThrowError() async throws {
-        let sut = GetResponse.make(getData: { throw ErrorInTest.sample })
+        let sut = GetResponse.makeSUT(getData: { throw ErrorInTest.sample })
         
         await XCTAssertThrowsError(
             try await sut.fetch(),
@@ -45,7 +45,7 @@ final class GetResponseTests: XCTestCase {
     }
     
     func testFetch_whenDecoderThrewError_shouldThrowError() async throws {
-        let sut = GetResponse.make(decoder: { _ in throw ErrorInTest.sample })
+        let sut = GetResponse.makeSUT(decoder: { _ in throw ErrorInTest.sample })
         
         await XCTAssertThrowsError(
             try await sut.fetch(),
@@ -54,8 +54,8 @@ final class GetResponseTests: XCTestCase {
     }
 }
 
-extension GetResponse {
-    static func make(
+private extension GetResponse {
+    static func makeSUT(
         getData: @escaping () async throws -> Data = { Data() },
         decoder: @escaping (Data) throws -> T = { _ in StubResponse() }
     ) -> Self {

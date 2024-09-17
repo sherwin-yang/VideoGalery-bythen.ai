@@ -1,5 +1,5 @@
 //
-//  UploadedVideoListViewModelTests.swift
+//  VideoGaleryViewModelTests.swift
 //  VideoGalery-bythen.aiTests
 //
 //  Created by Sherwin Yang on 9/14/24.
@@ -10,10 +10,10 @@ import Combine
 
 @testable import VideoGalery_bythen_ai
 
-final class UploadedVideoListViewModelTests: XCTestCase {
+final class VideoGaleryViewModelTests: XCTestCase {
     
     func testInitialValues() {
-        let sut = UploadedVideoListViewModel.make(getUploadedVideoDetail: { [] })
+        let sut = VideoGaleryViewModel.makeSUT(getUploadedVideoDetail: { [] })
         XCTAssertTrue(sut.uploadedVideoDetail.isEmpty)
         XCTAssertTrue(sut.isUploadedVideoListViewHidden)
         XCTAssertFalse(sut.isLoadingIndicatorHidden)
@@ -21,11 +21,11 @@ final class UploadedVideoListViewModelTests: XCTestCase {
     }
 
     func test_viewAppear_and_retry_shouldGetUploadedVideoDetail() {
-        func test(action: (UploadedVideoListViewModel) -> Void, line: UInt = #line) {
+        func test(action: (VideoGaleryViewModel) -> Void, line: UInt = #line) {
             var getUploadedVideoDetailCalled = false
             let expectation = expectation(description: "getUploadedVideoDetailCalled never get called")
             expectation.expectedFulfillmentCount = 1
-            let sut = UploadedVideoListViewModel.make(
+            let sut = VideoGaleryViewModel.makeSUT(
                 getUploadedVideoDetail: {
                     getUploadedVideoDetailCalled = true
                     expectation.fulfill()
@@ -45,11 +45,11 @@ final class UploadedVideoListViewModelTests: XCTestCase {
     
     @MainActor
     func testGetUploadedVideoDetailSuccess() {
-        func test(action: (UploadedVideoListViewModel) -> Void, line: UInt = #line) {
+        func test(action: (VideoGaleryViewModel) -> Void, line: UInt = #line) {
             let expectation = expectation(description: "getUploadedVideoDetailCalled() never get called")
             expectation.expectedFulfillmentCount = 1
-            let uploadedVideoDetails = [UploadedVideoDetail.random(), .random(), .random()]
-            let sut = UploadedVideoListViewModel.make(
+            let uploadedVideoDetails = [VideoDetail.random(), .random(), .random()]
+            let sut = VideoGaleryViewModel.makeSUT(
                 getUploadedVideoDetail: {
                     expectation.fulfill()
                     return uploadedVideoDetails
@@ -71,10 +71,10 @@ final class UploadedVideoListViewModelTests: XCTestCase {
     
     @MainActor
     func testGetUploadedVideoDetailError() {
-        func test(action: (UploadedVideoListViewModel) -> Void, line: UInt = #line) {
+        func test(action: (VideoGaleryViewModel) -> Void, line: UInt = #line) {
             let expectation = expectation(description: "getUploadedVideoDetailCalled() never get called")
             expectation.expectedFulfillmentCount = 1
-            let sut = UploadedVideoListViewModel.make(
+            let sut = VideoGaleryViewModel.makeSUT(
                 getUploadedVideoDetail: {
                     expectation.fulfill()
                     throw ErrorInTest.sample
@@ -96,8 +96,8 @@ final class UploadedVideoListViewModelTests: XCTestCase {
     }
     
     func testRetry_shouldShowLoadingIndicator_andHideRetryButton() {
-        func test(action: (UploadedVideoListViewModel) -> Void, line: UInt = #line) {
-            let sut = UploadedVideoListViewModel.make(
+        func test(action: (VideoGaleryViewModel) -> Void, line: UInt = #line) {
+            let sut = VideoGaleryViewModel.makeSUT(
                 getUploadedVideoDetail: {
                     try await Task.sleep(nanoseconds: 1_000_000)
                     return []
@@ -116,15 +116,15 @@ final class UploadedVideoListViewModelTests: XCTestCase {
 
 }
 
-extension UploadedVideoListViewModel {
-    static func make(
-        getUploadedVideoDetail: @escaping () async throws -> [UploadedVideoDetail] = { [] },
+private extension VideoGaleryViewModel {
+    static func makeSUT(
+        getUploadedVideoDetail: @escaping () async throws -> [VideoDetail] = { [] },
         deleteItem: @escaping (String) -> Void = { _ in },
         observeVideoUploading: @escaping () -> AnyPublisher<UploadVideoStatus, Never>
         = { Just(UploadVideoStatus.none).eraseToAnyPublisher() },
         retryVideoUpload: @escaping () -> Void = { },
         cancelLastUploadVideo: @escaping () -> Void = { }
-    ) -> UploadedVideoListViewModel {
+    ) -> VideoGaleryViewModel {
         .init(getUploadedVideoDetail: getUploadedVideoDetail,
               deleteItem: deleteItem,
               observeVideoUploading: observeVideoUploading, 
@@ -133,7 +133,7 @@ extension UploadedVideoListViewModel {
     }
 }
 
-extension UploadedVideoDetail {
+extension VideoDetail {
     static func random() -> Self {
         .init(publicId: .random(), secureUrl: URL(string: .random())!, createdAt: .random())
     }

@@ -1,5 +1,5 @@
 //
-//  ApiKeyManager.swift
+//  ApiKeyProvider.swift
 //  VideoGalery-bythen.ai
 //
 //  Created by Sherwin Yang on 9/13/24.
@@ -12,7 +12,7 @@ enum GetApiKeyError: Error {
     case failToRetrieve
 }
 
-final class ApiKeyManager {
+final class ApiKeyProvider {
     private var secureLocalSourceApiKeyManager: SecureLocalSourceApiKeyManagerProtocol
     private let getRemoteSourceApiKey: () async throws -> Keys
     
@@ -37,7 +37,7 @@ final class ApiKeyManager {
     }
 }
 
-extension ApiKeyManager {
+extension ApiKeyProvider {
     static func make() -> Self {
         .init(secureLocalSourceApiKeyManager: SecureLocalSourceApiKeyManager.make(),
               getRemoteSourceApiKey: FirebaseSourceApiKeyProvider.make().key)

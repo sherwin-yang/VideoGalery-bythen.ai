@@ -31,7 +31,7 @@ class VideoUploader {
         videoPoster.post(filePath: filePath) { success in
             if success {
                 NotificationCenter.default.post(name: .successUploadVideo, object: nil, userInfo: [:])
-                _ = try? FileManager.default.removeItem(at: filePath)
+                try? FileManager.default.removeItem(at: filePath)
             } else {
                 NotificationCenter.default.post(name: .failedUploadVideo, object: nil, userInfo: [:])
             }
@@ -45,6 +45,6 @@ class VideoUploader {
     
     func cancel() {
         videoPoster.cancelUploadTask()
-        if let filePath { _ = try? FileManager.default.removeItem(at: filePath) }
+        if let filePath { try? FileManager.default.removeItem(at: filePath) }
     }
 }

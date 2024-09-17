@@ -1,5 +1,5 @@
 //
-//  UploadedVideoDetailListView.swift
+//  VideoDetailListView.swift
 //  VideoGalery-bythen.ai
 //
 //  Created by Sherwin Yang on 9/14/24.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct UploadedVideoDetailListView: View {
-    var videoDetails: [UploadedVideoDetail]
-    @Binding var toPreviewVideoSelection: UploadedVideoDetail?
-    @Binding var toDeleteVideoSelection: UploadedVideoDetail?
+struct VideoDetailListView: View {
+    var videoDetails: [VideoDetail]
+    @Binding var toPreviewVideoSelection: VideoDetail?
+    @Binding var toDeleteVideoSelection: VideoDetail?
     @Binding var didSelectedItemToDelete: Bool
     @Binding var isDeletingMode: Bool
     
@@ -58,15 +58,15 @@ struct UploadedVideoDetailListView: View {
 }
 
 #Preview {
-    @State var toPreviewVideoSelection: UploadedVideoDetail?
-    @State var toDeleteVideoSelection: UploadedVideoDetail?
+    @State var toPreviewVideoSelection: VideoDetail?
+    @State var toDeleteVideoSelection: VideoDetail?
     @State var didSelectedItemToDelete = Bool.random()
     @State var isDeletingMode = Bool.random()
-    return UploadedVideoDetailListView(videoDetails: [], 
-                                       toPreviewVideoSelection: $toPreviewVideoSelection, 
-                                       toDeleteVideoSelection: $toDeleteVideoSelection, 
-                                       didSelectedItemToDelete: $didSelectedItemToDelete,
-                                       isDeletingMode: $isDeletingMode)
+    return VideoDetailListView(videoDetails: [],
+                               toPreviewVideoSelection: $toPreviewVideoSelection,
+                               toDeleteVideoSelection: $toDeleteVideoSelection,
+                               didSelectedItemToDelete: $didSelectedItemToDelete,
+                               isDeletingMode: $isDeletingMode)
 }
 
 private struct CardBackground: ViewModifier {

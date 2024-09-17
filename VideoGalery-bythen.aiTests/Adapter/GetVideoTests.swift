@@ -15,7 +15,7 @@ final class GetVideoTests: XCTestCase {
         let apiKey = ApiKey(apiKey: "\(Int.random())", apiSecret: .random())
         var getAuthKeyCalled = false
         var urlRequest: URLRequest?
-        let sut = GetVideo(
+        let sut = GetVideo.makeSUT(
             getAuthKey: {
                 getAuthKeyCalled = true
                 return apiKey
@@ -42,14 +42,14 @@ final class GetVideoTests: XCTestCase {
     
     func testGetData_returnDataFromGetData() async throws {
         let data = Data(count: .random())
-        let sut = GetVideo.make(getData: { _ in data })
+        let sut = GetVideo.makeSUT(getData: { _ in data })
         
         let result = try await sut.data()
         XCTAssertEqual(result, data)
     }
     
     func testGetData_whenGetAuthKeyThrewError_shouldThrowError() async {
-        let sut = GetVideo.make(getAuthKey: { throw ErrorInTest.sample })
+        let sut = GetVideo.makeSUT(getAuthKey: { throw ErrorInTest.sample })
         
         await XCTAssertThrowsError(
             try await sut.data(),
@@ -58,7 +58,7 @@ final class GetVideoTests: XCTestCase {
     }
     
     func testGetData_whenGetDataThrewError_shouldThrowError() async {
-        let sut = GetVideo.make(getData: { _ in throw ErrorInTest.sample })
+        let sut = GetVideo.makeSUT(getData: { _ in throw ErrorInTest.sample })
         
         await XCTAssertThrowsError(
             try await sut.data(),
@@ -68,10 +68,10 @@ final class GetVideoTests: XCTestCase {
 
 }
 
-extension GetVideo {
-    static func make(
+private extension GetVideo {
+    static func makeSUT(
         getAuthKey: @escaping () async throws -> ApiKey
-        = { .init(apiKey: .random(), apiSecret: .random()) },
+        = { .init(apiKey: "\(Int.random())", apiSecret: .random()) },
         getData: @escaping (URLRequest) async throws -> Data
         = { _ in Data() }
     ) -> Self {

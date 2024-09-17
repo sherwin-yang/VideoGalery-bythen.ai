@@ -1,5 +1,5 @@
 //
-//  UploadedVideoListView.swift
+//  UploadedVideosView.swift
 //  VideoGalery-bythen.ai
 //
 //  Created by Sherwin Yang on 9/12/24.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct UploadedVideoListView: View {
+struct VideoGaleryView: View {
     @Environment(\.dismiss) private var dismiss
-    @ObservedObject private var viewModel = UploadedVideoListViewModel.make()
+    @ObservedObject private var viewModel = VideoGaleryViewModel.make()
     
-    @State private var toPreviewSelectedItem: UploadedVideoDetail?
+    @State private var toPreviewSelectedItem: VideoDetail?
     @State private var isShowingRecordingScreen = false
-    @State private var toDeleteSelectedItem: UploadedVideoDetail?
+    @State private var toDeleteSelectedItem: VideoDetail?
     @State private var didSelectedItemToDelete = false
     @State private var isDeletingMode = false
     
@@ -41,7 +41,7 @@ struct UploadedVideoListView: View {
                 .buttonStyle(BorderedButtonStyle())
                 .isHidden(viewModel.isRetryButtonHidden)
                 
-                UploadedVideoDetailListView(
+                VideoDetailListView(
                     videoDetails: viewModel.uploadedVideoDetail,
                     toPreviewVideoSelection: $toPreviewSelectedItem,
                     toDeleteVideoSelection: $toDeleteSelectedItem,
@@ -68,7 +68,7 @@ struct UploadedVideoListView: View {
                         action: { isDeletingMode.toggle() },
                         label: {
                             if isDeletingMode {
-                                Text("Cancel")
+                                Text("Done")
                             } else {
                                 Text("Delete")
                                     .foregroundStyle(.red)
@@ -111,7 +111,7 @@ struct UploadedVideoListView: View {
                     )
                 }
             }
-            .alert("Confirm Deleting \(toDeleteItemPublicId)?", isPresented: $didSelectedItemToDelete) {
+            .alert("Confirm deleting \(toDeleteItemPublicId)?", isPresented: $didSelectedItemToDelete) {
                 Button("Cancel") { dismiss() }
                 Button("Confirm") {
                     viewModel.delete(item: toDeleteSelectedItem)
@@ -120,7 +120,7 @@ struct UploadedVideoListView: View {
                 .foregroundColor(.red)
             }
             .alert(
-                "Do you wish to DELETE/CANCEL your last uploading video and continue to record NEW video",
+                "Do you wish to DELETE/CANCEL your last uploading video and continue to record NEW video?",
                 isPresented: $showWarningDeletingLastVideoRecording)
             {
                 Button("No") { dismiss() }
@@ -134,5 +134,5 @@ struct UploadedVideoListView: View {
 }
 
 #Preview {
-    UploadedVideoListView()
+    VideoGaleryView()
 }

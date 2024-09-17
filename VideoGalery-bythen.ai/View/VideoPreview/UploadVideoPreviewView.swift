@@ -24,7 +24,10 @@ struct UploadVideoPreviewView: View {
             VideoPlayerView(videoURL: videoURL)
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
-                        Button("Cancel") { dismiss() }
+                        Button("Cancel") {
+                            dismiss()
+                            try? FileManager.default.removeItem(at: videoURL)
+                        }
                     }
                     
                     ToolbarItem(placement: .topBarTrailing) {

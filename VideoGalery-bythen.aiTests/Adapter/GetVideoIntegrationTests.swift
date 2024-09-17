@@ -18,7 +18,7 @@ final class GetVideoIntegrationTests: XCTestCase {
     func testGetVideo() async throws {
         let sut = GetResponse(
             getData: GetVideo(
-                getAuthKey: ApiKeyManager.make().get,
+                getAuthKey: ApiKeyProvider.make().get,
                 getData: HTTPRequest.makeRequest
             ).data,
             decoder: ResourcesResponse<[VideoResponse]>.decode

@@ -42,6 +42,6 @@ struct DeleteVideo {
 
 extension DeleteVideo {
     static func make() -> Self {
-        .init(getAuthKey: ApiKeyManager.make().get, delete: HTTPRequest.makeRequest)
+        .init(getAuthKey: ApiKeyProvider.make().get, delete: HTTPRequest.makeRequest)
     }
 }

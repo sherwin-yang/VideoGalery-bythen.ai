@@ -30,7 +30,7 @@ struct VideoGalery_bythen_aiApp: App {
             if EnvironmentVariable.isUnitTest {
                 TestingEnvEmptyView()
             } else {
-                UploadedVideoListView()
+                VideoGaleryView()
             }
         }
     }

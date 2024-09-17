@@ -17,17 +17,17 @@
 		2149A5202C94839C0070EED5 /* FirebaseSourceApiKeyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A51F2C94839C0070EED5 /* FirebaseSourceApiKeyProvider.swift */; };
 		2149A5232C9488A70070EED5 /* FirebaseSourceApiKeyProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5222C9488A70070EED5 /* FirebaseSourceApiKeyProviderTests.swift */; };
 		2149A5252C948FDB0070EED5 /* FirebaseSourceApiKeyProviderIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5242C948FDB0070EED5 /* FirebaseSourceApiKeyProviderIntegrationTests.swift */; };
-		2149A5292C9499F80070EED5 /* ApiKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5282C9499F80070EED5 /* ApiKeyManager.swift */; };
-		2149A52F2C94A56F0070EED5 /* ApiKeyManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A52E2C94A56F0070EED5 /* ApiKeyManagerTest.swift */; };
+		2149A5292C9499F80070EED5 /* ApiKeyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5282C9499F80070EED5 /* ApiKeyProvider.swift */; };
+		2149A52F2C94A56F0070EED5 /* ApiKeyProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A52E2C94A56F0070EED5 /* ApiKeyProviderTest.swift */; };
 		2149A5312C94DAEA0070EED5 /* GetVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5302C94DAEA0070EED5 /* GetVideo.swift */; };
 		2149A5342C94DDDA0070EED5 /* GetVideoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5332C94DDDA0070EED5 /* GetVideoTests.swift */; };
 		2149A5362C94E7240070EED5 /* GetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5352C94E7240070EED5 /* GetResponse.swift */; };
 		2149A5382C94E7850070EED5 /* GetResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5372C94E7850070EED5 /* GetResponseTests.swift */; };
 		2149A53A2C94EA640070EED5 /* GetVideoIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5392C94EA640070EED5 /* GetVideoIntegrationTests.swift */; };
 		2149A53D2C94EF260070EED5 /* Decodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A53C2C94EF260070EED5 /* Decodable+Extension.swift */; };
-		2149A53F2C9505F90070EED5 /* UploadedVideoDetailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A53E2C9505F90070EED5 /* UploadedVideoDetailProvider.swift */; };
-		2149A5412C9506DE0070EED5 /* UploadedVideoDetailProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5402C9506DE0070EED5 /* UploadedVideoDetailProviderTests.swift */; };
-		215BD3352C958A080038E6F9 /* UploadedVideoDetailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD3342C958A080038E6F9 /* UploadedVideoDetailListView.swift */; };
+		2149A53F2C9505F90070EED5 /* VideoDetailsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A53E2C9505F90070EED5 /* VideoDetailsProvider.swift */; };
+		2149A5412C9506DE0070EED5 /* VideoDetailsProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149A5402C9506DE0070EED5 /* VideoDetailsProviderTests.swift */; };
+		215BD3352C958A080038E6F9 /* VideoDetailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD3342C958A080038E6F9 /* VideoDetailListView.swift */; };
 		215BD3372C95A61C0038E6F9 /* VideoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD3362C95A61C0038E6F9 /* VideoPreviewView.swift */; };
 		215BD33D2C95A8F40038E6F9 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD33C2C95A8F40038E6F9 /* View+Extension.swift */; };
 		215BD3412C95CE090038E6F9 /* VideoRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD3402C95CE090038E6F9 /* VideoRecordingView.swift */; };
@@ -43,10 +43,10 @@
 		215BD3BF2C96A0FF0038E6F9 /* UploadVideoStatusPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD3BE2C96A0FE0038E6F9 /* UploadVideoStatusPublisher.swift */; };
 		215BD3C22C96A40F0038E6F9 /* UploadVideoPreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD3C12C96A40F0038E6F9 /* UploadVideoPreviewViewModel.swift */; };
 		215BD3C42C96CC1F0038E6F9 /* DeleteVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BD3C32C96CC1F0038E6F9 /* DeleteVideo.swift */; };
-		215DDE612C95769600923786 /* UploadedVideoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DDE602C95769600923786 /* UploadedVideoListViewModel.swift */; };
-		215DDE642C95788500923786 /* UploadedVideoListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DDE632C95788500923786 /* UploadedVideoListViewModelTests.swift */; };
+		215DDE612C95769600923786 /* VideoGaleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DDE602C95769600923786 /* VideoGaleryViewModel.swift */; };
+		215DDE642C95788500923786 /* VideoGaleryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DDE632C95788500923786 /* VideoGaleryViewModelTests.swift */; };
 		21AF812A2C93059700376D1F /* VideoGalery_bythen_aiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF81292C93059700376D1F /* VideoGalery_bythen_aiApp.swift */; };
-		21AF812C2C93059700376D1F /* UploadedVideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF812B2C93059700376D1F /* UploadedVideoListView.swift */; };
+		21AF812C2C93059700376D1F /* VideoGaleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF812B2C93059700376D1F /* VideoGaleryView.swift */; };
 		21AF812E2C93059900376D1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21AF812D2C93059900376D1F /* Assets.xcassets */; };
 		21AF81312C93059900376D1F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21AF81302C93059900376D1F /* Preview Assets.xcassets */; };
 		21AF81452C93059A00376D1F /* VideoGalery_bythen_aiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF81442C93059A00376D1F /* VideoGalery_bythen_aiUITests.swift */; };
@@ -87,17 +87,17 @@
 		2149A51F2C94839C0070EED5 /* FirebaseSourceApiKeyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSourceApiKeyProvider.swift; sourceTree = "<group>"; };
 		2149A5222C9488A70070EED5 /* FirebaseSourceApiKeyProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSourceApiKeyProviderTests.swift; sourceTree = "<group>"; };
 		2149A5242C948FDB0070EED5 /* FirebaseSourceApiKeyProviderIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSourceApiKeyProviderIntegrationTests.swift; sourceTree = "<group>"; };
-		2149A5282C9499F80070EED5 /* ApiKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeyManager.swift; sourceTree = "<group>"; };
-		2149A52E2C94A56F0070EED5 /* ApiKeyManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeyManagerTest.swift; sourceTree = "<group>"; };
+		2149A5282C9499F80070EED5 /* ApiKeyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeyProvider.swift; sourceTree = "<group>"; };
+		2149A52E2C94A56F0070EED5 /* ApiKeyProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeyProviderTest.swift; sourceTree = "<group>"; };
 		2149A5302C94DAEA0070EED5 /* GetVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetVideo.swift; sourceTree = "<group>"; };
 		2149A5332C94DDDA0070EED5 /* GetVideoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetVideoTests.swift; sourceTree = "<group>"; };
 		2149A5352C94E7240070EED5 /* GetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetResponse.swift; sourceTree = "<group>"; };
 		2149A5372C94E7850070EED5 /* GetResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetResponseTests.swift; sourceTree = "<group>"; };
 		2149A5392C94EA640070EED5 /* GetVideoIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetVideoIntegrationTests.swift; sourceTree = "<group>"; };
 		2149A53C2C94EF260070EED5 /* Decodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Extension.swift"; sourceTree = "<group>"; };
-		2149A53E2C9505F90070EED5 /* UploadedVideoDetailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedVideoDetailProvider.swift; sourceTree = "<group>"; };
-		2149A5402C9506DE0070EED5 /* UploadedVideoDetailProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedVideoDetailProviderTests.swift; sourceTree = "<group>"; };
-		215BD3342C958A080038E6F9 /* UploadedVideoDetailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedVideoDetailListView.swift; sourceTree = "<group>"; };
+		2149A53E2C9505F90070EED5 /* VideoDetailsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailsProvider.swift; sourceTree = "<group>"; };
+		2149A5402C9506DE0070EED5 /* VideoDetailsProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailsProviderTests.swift; sourceTree = "<group>"; };
+		215BD3342C958A080038E6F9 /* VideoDetailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailListView.swift; sourceTree = "<group>"; };
 		215BD3362C95A61C0038E6F9 /* VideoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPreviewView.swift; sourceTree = "<group>"; };
 		215BD33C2C95A8F40038E6F9 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		215BD3402C95CE090038E6F9 /* VideoRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRecordingView.swift; sourceTree = "<group>"; };
@@ -112,11 +112,11 @@
 		215BD3BE2C96A0FE0038E6F9 /* UploadVideoStatusPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoStatusPublisher.swift; sourceTree = "<group>"; };
 		215BD3C12C96A40F0038E6F9 /* UploadVideoPreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoPreviewViewModel.swift; sourceTree = "<group>"; };
 		215BD3C32C96CC1F0038E6F9 /* DeleteVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteVideo.swift; sourceTree = "<group>"; };
-		215DDE602C95769600923786 /* UploadedVideoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedVideoListViewModel.swift; sourceTree = "<group>"; };
-		215DDE632C95788500923786 /* UploadedVideoListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedVideoListViewModelTests.swift; sourceTree = "<group>"; };
+		215DDE602C95769600923786 /* VideoGaleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGaleryViewModel.swift; sourceTree = "<group>"; };
+		215DDE632C95788500923786 /* VideoGaleryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGaleryViewModelTests.swift; sourceTree = "<group>"; };
 		21AF81262C93059700376D1F /* VideoGalery-bythen.ai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VideoGalery-bythen.ai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21AF81292C93059700376D1F /* VideoGalery_bythen_aiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGalery_bythen_aiApp.swift; sourceTree = "<group>"; };
-		21AF812B2C93059700376D1F /* UploadedVideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedVideoListView.swift; sourceTree = "<group>"; };
+		21AF812B2C93059700376D1F /* VideoGaleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGaleryView.swift; sourceTree = "<group>"; };
 		21AF812D2C93059900376D1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21AF81302C93059900376D1F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		21AF81362C93059A00376D1F /* VideoGalery-bythen.aiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VideoGalery-bythen.aiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,12 +159,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		213D42DD2C9445EF00F57411 /* Repository */ = {
+		213D42DD2C9445EF00F57411 /* ApiKeyProvider */ = {
 			isa = PBXGroup;
 			children = (
+				2149A5282C9499F80070EED5 /* ApiKeyProvider.swift */,
+				2149A5162C94817F0070EED5 /* SecureLocalSourceApiKeyManager.swift */,
 				213D42DC2C9445EF00F57411 /* KeychainStore.swift */,
+				2149A51F2C94839C0070EED5 /* FirebaseSourceApiKeyProvider.swift */,
+				2149A51D2C9483760070EED5 /* FirebaseDocumentProvider.swift */,
 			);
-			path = Repository;
+			path = ApiKeyProvider;
 			sourceTree = "<group>";
 		};
 		213D42E22C94495700F57411 /* Repository */ = {
@@ -178,10 +182,8 @@
 		2149A5172C94817F0070EED5 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				2149A5282C9499F80070EED5 /* ApiKeyManager.swift */,
-				2149A5162C94817F0070EED5 /* SecureLocalSourceApiKeyManager.swift */,
-				2149A51F2C94839C0070EED5 /* FirebaseSourceApiKeyProvider.swift */,
-				2149A53E2C9505F90070EED5 /* UploadedVideoDetailProvider.swift */,
+				2149A5352C94E7240070EED5 /* GetResponse.swift */,
+				2149A53E2C9505F90070EED5 /* VideoDetailsProvider.swift */,
 				215BD3642C9683370038E6F9 /* VideoUploader.swift */,
 				215BD3BE2C96A0FE0038E6F9 /* UploadVideoStatusPublisher.swift */,
 			);
@@ -191,11 +193,7 @@
 		2149A51A2C94818F0070EED5 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				2149A52E2C94A56F0070EED5 /* ApiKeyManagerTest.swift */,
-				2149A5192C94818F0070EED5 /* SecureLocalSourceApiKeyManagerTests.swift */,
-				2149A5222C9488A70070EED5 /* FirebaseSourceApiKeyProviderTests.swift */,
-				2149A5242C948FDB0070EED5 /* FirebaseSourceApiKeyProviderIntegrationTests.swift */,
-				2149A5402C9506DE0070EED5 /* UploadedVideoDetailProviderTests.swift */,
+				2149A5402C9506DE0070EED5 /* VideoDetailsProviderTests.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -203,8 +201,6 @@
 		2149A51C2C9483640070EED5 /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
-				2149A5352C94E7240070EED5 /* GetResponse.swift */,
-				2149A51D2C9483760070EED5 /* FirebaseDocumentProvider.swift */,
 				2149A5302C94DAEA0070EED5 /* GetVideo.swift */,
 				215BD35C2C965DC80038E6F9 /* PostVideo.swift */,
 				215BD3C32C96CC1F0038E6F9 /* DeleteVideo.swift */,
@@ -234,7 +230,7 @@
 		215BD3382C95A64D0038E6F9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				215DDE602C95769600923786 /* UploadedVideoListViewModel.swift */,
+				215DDE602C95769600923786 /* VideoGaleryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -253,7 +249,6 @@
 				215BD3C02C96A3A10038E6F9 /* ViewModel */,
 				215BD3402C95CE090038E6F9 /* VideoRecordingView.swift */,
 				215BD3422C95D5D20038E6F9 /* CameraViewController.swift */,
-				215BD34E2C962F8C0038E6F9 /* UploadVideoPreviewView.swift */,
 			);
 			path = VideoRecordingView;
 			sourceTree = "<group>";
@@ -279,28 +274,28 @@
 			isa = PBXGroup;
 			children = (
 				215BD3492C962C7C0038E6F9 /* Shared */,
-				215DDE5F2C95767600923786 /* UploadedVideoList */,
+				215DDE5F2C95767600923786 /* VideoGalery */,
+				21FDF49B2C98E4C6007A2579 /* VideoPreview */,
 				215BD33F2C95CDEF0038E6F9 /* VideoRecordingView */,
 				215BD33B2C95A8DF0038E6F9 /* Helper */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		215DDE5F2C95767600923786 /* UploadedVideoList */ = {
+		215DDE5F2C95767600923786 /* VideoGalery */ = {
 			isa = PBXGroup;
 			children = (
 				215BD3382C95A64D0038E6F9 /* ViewModel */,
-				21AF812B2C93059700376D1F /* UploadedVideoListView.swift */,
-				215BD3342C958A080038E6F9 /* UploadedVideoDetailListView.swift */,
-				215BD3362C95A61C0038E6F9 /* VideoPreviewView.swift */,
+				21AF812B2C93059700376D1F /* VideoGaleryView.swift */,
+				215BD3342C958A080038E6F9 /* VideoDetailListView.swift */,
 			);
-			path = UploadedVideoList;
+			path = VideoGalery;
 			sourceTree = "<group>";
 		};
 		215DDE622C95787400923786 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				215DDE632C95788500923786 /* UploadedVideoListViewModelTests.swift */,
+				215DDE632C95788500923786 /* VideoGaleryViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -333,7 +328,7 @@
 				2149A5172C94817F0070EED5 /* Interactor */,
 				2149A51C2C9483640070EED5 /* Adapter */,
 				21AF81532C93080900376D1F /* HTTPClient */,
-				213D42DD2C9445EF00F57411 /* Repository */,
+				213D42DD2C9445EF00F57411 /* ApiKeyProvider */,
 				2149A53B2C94EEFD0070EED5 /* Extensions */,
 				21498BBC2C941BB9005FC3B0 /* GoogleService-Info.plist */,
 				21AF812D2C93059900376D1F /* Assets.xcassets */,
@@ -358,6 +353,7 @@
 				2149A51A2C94818F0070EED5 /* Interactor */,
 				2149A5322C94DDCA0070EED5 /* Adapter */,
 				21AF81562C93083000376D1F /* HTTPClient */,
+				21F68AAA2C98EB41007E4410 /* ApiKeyProvider */,
 				213D42E22C94495700F57411 /* Repository */,
 				21AF815A2C9309B900376D1F /* TestHelper.swift */,
 			);
@@ -391,6 +387,26 @@
 				21AF81B62C93301300376D1F /* CloudinaryURLBuilderTests.swift */,
 			);
 			path = HTTPClient;
+			sourceTree = "<group>";
+		};
+		21F68AAA2C98EB41007E4410 /* ApiKeyProvider */ = {
+			isa = PBXGroup;
+			children = (
+				2149A52E2C94A56F0070EED5 /* ApiKeyProviderTest.swift */,
+				2149A5192C94818F0070EED5 /* SecureLocalSourceApiKeyManagerTests.swift */,
+				2149A5222C9488A70070EED5 /* FirebaseSourceApiKeyProviderTests.swift */,
+				2149A5242C948FDB0070EED5 /* FirebaseSourceApiKeyProviderIntegrationTests.swift */,
+			);
+			path = ApiKeyProvider;
+			sourceTree = "<group>";
+		};
+		21FDF49B2C98E4C6007A2579 /* VideoPreview */ = {
+			isa = PBXGroup;
+			children = (
+				215BD3362C95A61C0038E6F9 /* VideoPreviewView.swift */,
+				215BD34E2C962F8C0038E6F9 /* UploadVideoPreviewView.swift */,
+			);
+			path = VideoPreview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -538,24 +554,24 @@
 				215BD3C42C96CC1F0038E6F9 /* DeleteVideo.swift in Sources */,
 				215BD34B2C962C8D0038E6F9 /* CloseButton.swift in Sources */,
 				215BD3432C95D5D20038E6F9 /* CameraViewController.swift in Sources */,
-				215BD3352C958A080038E6F9 /* UploadedVideoDetailListView.swift in Sources */,
+				215BD3352C958A080038E6F9 /* VideoDetailListView.swift in Sources */,
 				21AF81B52C932FEA00376D1F /* CloudinaryURLBuilder.swift in Sources */,
 				2149A53D2C94EF260070EED5 /* Decodable+Extension.swift in Sources */,
 				215BD3BF2C96A0FF0038E6F9 /* UploadVideoStatusPublisher.swift in Sources */,
-				21AF812C2C93059700376D1F /* UploadedVideoListView.swift in Sources */,
+				21AF812C2C93059700376D1F /* VideoGaleryView.swift in Sources */,
 				213D42DE2C9445EF00F57411 /* KeychainStore.swift in Sources */,
 				215BD34F2C962F8C0038E6F9 /* UploadVideoPreviewView.swift in Sources */,
 				215BD3372C95A61C0038E6F9 /* VideoPreviewView.swift in Sources */,
 				215BD3412C95CE090038E6F9 /* VideoRecordingView.swift in Sources */,
 				2149A51E2C9483760070EED5 /* FirebaseDocumentProvider.swift in Sources */,
 				215BD3652C9683370038E6F9 /* VideoUploader.swift in Sources */,
-				2149A53F2C9505F90070EED5 /* UploadedVideoDetailProvider.swift in Sources */,
-				215DDE612C95769600923786 /* UploadedVideoListViewModel.swift in Sources */,
+				2149A53F2C9505F90070EED5 /* VideoDetailsProvider.swift in Sources */,
+				215DDE612C95769600923786 /* VideoGaleryViewModel.swift in Sources */,
 				2149A5202C94839C0070EED5 /* FirebaseSourceApiKeyProvider.swift in Sources */,
 				21AF812A2C93059700376D1F /* VideoGalery_bythen_aiApp.swift in Sources */,
 				215BD3462C9608260038E6F9 /* AVCaptureSession+Extension.swift in Sources */,
 				2149A5182C94817F0070EED5 /* SecureLocalSourceApiKeyManager.swift in Sources */,
-				2149A5292C9499F80070EED5 /* ApiKeyManager.swift in Sources */,
+				2149A5292C9499F80070EED5 /* ApiKeyProvider.swift in Sources */,
 				215BD3C22C96A40F0038E6F9 /* UploadVideoPreviewViewModel.swift in Sources */,
 				2149A5312C94DAEA0070EED5 /* GetVideo.swift in Sources */,
 				21AF81BC2C93339C00376D1F /* APIURLRequest.swift in Sources */,
@@ -573,11 +589,11 @@
 				21AF81BE2C9333AF00376D1F /* APIURLRequestTests.swift in Sources */,
 				2149A5342C94DDDA0070EED5 /* GetVideoTests.swift in Sources */,
 				21AF81592C93086D00376D1F /* HTTPRequestErrorIntegrationTests.swift in Sources */,
-				2149A5412C9506DE0070EED5 /* UploadedVideoDetailProviderTests.swift in Sources */,
+				2149A5412C9506DE0070EED5 /* VideoDetailsProviderTests.swift in Sources */,
 				21AF815B2C9309B900376D1F /* TestHelper.swift in Sources */,
-				2149A52F2C94A56F0070EED5 /* ApiKeyManagerTest.swift in Sources */,
+				2149A52F2C94A56F0070EED5 /* ApiKeyProviderTest.swift in Sources */,
 				2149A5252C948FDB0070EED5 /* FirebaseSourceApiKeyProviderIntegrationTests.swift in Sources */,
-				215DDE642C95788500923786 /* UploadedVideoListViewModelTests.swift in Sources */,
+				215DDE642C95788500923786 /* VideoGaleryViewModelTests.swift in Sources */,
 				2149A5232C9488A70070EED5 /* FirebaseSourceApiKeyProviderTests.swift in Sources */,
 				21AF81B72C93301300376D1F /* CloudinaryURLBuilderTests.swift in Sources */,
 				2149A5382C94E7850070EED5 /* GetResponseTests.swift in Sources */,

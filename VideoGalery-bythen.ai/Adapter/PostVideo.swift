@@ -81,7 +81,7 @@ class PostVideo: PostVideoProtocol {
 extension PostVideo {
     static func make() -> PostVideo {
         .init(
-            getAuthKey: ApiKeyManager.make().get,
+            getAuthKey: ApiKeyProvider.make().get,
             uploadVideo: { multipartFormDataURLRequest, videoMultipartFormData, completionBlock in
                 AF.upload(
                     multipartFormData: { multipartFormData in

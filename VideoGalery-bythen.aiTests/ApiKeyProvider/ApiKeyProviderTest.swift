@@ -1,5 +1,5 @@
 //
-//  ApiKeyManagerTest.swift
+//  ApiKeyProviderTest.swift
 //  VideoGalery-bythen.aiTests
 //
 //  Created by Sherwin Yang on 9/13/24.
@@ -10,13 +10,13 @@ import Combine
 
 @testable import VideoGalery_bythen_ai
 
-final class ApiKeyManagerTest: XCTestCase {
+final class ApiKeyProviderTest: XCTestCase {
 
     func testGetKey_whenApiKeyIsExistInLocal_shouldReturnKeyFromLocalSource() async throws {
         func test(fillApiKey: Bool, line: UInt = #line) async throws {
             let secureLocalSourceApiKeyManagerMock = SecureLocalSourceApiKeyManagerMock(apiKeyExist: fillApiKey)
             var getRemoteSourceApiKeyCalled = false
-            let sut = ApiKeyManager(
+            let sut = ApiKeyProvider(
                 secureLocalSourceApiKeyManager: secureLocalSourceApiKeyManagerMock,
                 getRemoteSourceApiKey: {
                     getRemoteSourceApiKeyCalled = true
@@ -39,7 +39,7 @@ final class ApiKeyManagerTest: XCTestCase {
         
         let secureLocalSourceApiKeyManagerMock = SecureLocalSourceApiKeyManagerMock(apiKeyExist: false)
         let remoteSourceApiKey = Keys(apiKey: .random(), apiSecret: .random())
-        let sut = ApiKeyManager(
+        let sut = ApiKeyProvider(
             secureLocalSourceApiKeyManager: secureLocalSourceApiKeyManagerMock,
             getRemoteSourceApiKey: {
                 actions.append(.getFromRemote)
@@ -60,7 +60,7 @@ final class ApiKeyManagerTest: XCTestCase {
     func testGetKey_shouldSaveKeyFromRemoteToLocal() async throws {
         let secureLocalSourceApiKeyManagerMock = SecureLocalSourceApiKeyManagerMock(apiKeyExist: false)
         let remoteSourceApiKey = Keys(apiKey: .random(), apiSecret: .random())
-        let sut = ApiKeyManager(
+        let sut = ApiKeyProvider(
             secureLocalSourceApiKeyManager: secureLocalSourceApiKeyManagerMock,
             getRemoteSourceApiKey: { remoteSourceApiKey }
         )
@@ -72,7 +72,7 @@ final class ApiKeyManagerTest: XCTestCase {
     }
     
     func testGetKey_whenLocalSourceNeverReturnKey() async throws {
-        let sut = ApiKeyManager(
+        let sut = ApiKeyProvider(
             secureLocalSourceApiKeyManager: AlwaysNilApiKeySecureLocalSourceApiKeyManager(),
             getRemoteSourceApiKey: { .init(apiKey: .random(), apiSecret: .random()) }
         )

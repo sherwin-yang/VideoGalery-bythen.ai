@@ -1,5 +1,5 @@
 //
-//  UploadedVideoListViewModel.swift
+//  VideoGaleryViewModel.swift
 //  VideoGalery-bythen.ai
 //
 //  Created by Sherwin Yang on 9/14/24.
@@ -8,15 +8,15 @@
 import Foundation
 import Combine
 
-final class UploadedVideoListViewModel: ObservableObject {
-    private let getUploadedVideoDetail: () async throws -> [UploadedVideoDetail]
+final class VideoGaleryViewModel: ObservableObject {
+    private let getUploadedVideoDetail: () async throws -> [VideoDetail]
     private let deleteItem: (String) -> Void
     private let observeVideoUploading: () -> AnyPublisher<UploadVideoStatus, Never>
     private let retryVideoUpload: () -> Void
     private let cancelLastUploadVideo: () -> Void
     private var getUploadedVideoDetailTask: Task<(), Never>?
     
-    @Published private(set) var uploadedVideoDetail: [UploadedVideoDetail] = []
+    @Published private(set) var uploadedVideoDetail: [VideoDetail] = []
     @Published private(set) var isUploadedVideoListViewHidden = true
     
     @Published private(set) var isLoadingIndicatorHidden = false
@@ -25,7 +25,7 @@ final class UploadedVideoListViewModel: ObservableObject {
     @Published private(set) var uploadVideoStatus = UploadVideoStatus.none
     
     init(
-        getUploadedVideoDetail: @escaping () async throws -> [UploadedVideoDetail],
+        getUploadedVideoDetail: @escaping () async throws -> [VideoDetail],
         deleteItem: @escaping (String) -> Void,
         observeVideoUploading: @escaping () -> AnyPublisher<UploadVideoStatus, Never>,
         retryVideoUpload: @escaping () -> Void,
@@ -57,7 +57,7 @@ final class UploadedVideoListViewModel: ObservableObject {
         loadGetUploadedVideoDetail()
     }
     
-    func delete(item: UploadedVideoDetail?) {
+    func delete(item: VideoDetail?) {
         guard let item else { return }
         deleteItem(item.publicId)
         uploadedVideoDetail.removeAll { $0 == item }
@@ -87,10 +87,10 @@ final class UploadedVideoListViewModel: ObservableObject {
     }
 }
 
-extension UploadedVideoListViewModel {
+extension VideoGaleryViewModel {
     static func make() -> Self {
         let videoUploader = VideoUploader.shared
-        return .init(getUploadedVideoDetail: UploadedVideoDetailProvider.make().get,
+        return .init(getUploadedVideoDetail: VideoDetailsProvider.make().get,
                      deleteItem: DeleteVideo.make().delete,
                      observeVideoUploading: UploadVideoStatusPublisher().observe,
                      retryVideoUpload: videoUploader.retry,
