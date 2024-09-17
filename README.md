@@ -6,59 +6,18 @@
 # Overview
 ## Features
 All views are supporting light and dark mode.
-<table>
-  <tr>
-    <th>Show List of Uploaded Videos</th>
-    <th>Retry Load Uploaded Videos</th>
-  </tr>
-  <tr>
-    <td><img src="README_Assets/VideoList.jpeg" width="332" alt="Show List of Uploaded Videos"></td>
-    <td>
-    <video width="332" controls>
-    <source src="README_Assets/720RetryLoadUploadedVideos.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>
-    </td>
-  </tr>
 
-  <tr>
-    <th>Upload Video</th>
-    <th>Retry Upload Video</th>
-  </tr>
-  <tr>
-    <td>
-    <video width="332" controls>
-    <source src="README_Assets/720UploadVideo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>
-    </td>
-    <td>
-    <video width="332" controls>
-    <source src="README_Assets/720RetryUploadVideo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>
-    </td>
-  </tr>
+| Show List of Uploaded Videos | Retry Load Uploaded Videos |
+|---|---|
+| <img src="README_Assets/VideoList.jpeg" width="332" alt="Show List of Uploaded Videos"> | ![Retry Load Uploaded Videos](https://github.com/user-attachments/assets/5702c242-d79d-4f0c-a95d-23f165374cb0) |
 
-  <tr>
-    <th>Delete Video</th>
-    <th>Delete Last Recorded Uploading Video To Record New One</th>
-  </tr>
-  <tr>
-    <td>
-    <video width="332" controls>
-    <source src="README_Assets/720DeleteVideo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>
-    </td>
-    <td>
-    <video width="332" controls>
-    <source src="README_Assets/720DeleteLastAndUploadNewVideo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>
-    </td>
-  </tr>
-</table>
+| Upload Video | Retry Upload Video |
+|---|---|
+| ![Retry Upload Video](https://github.com/user-attachments/assets/619fb1c6-72af-4692-a003-f6fc049b95ac) | ![Retry Upload Video](https://github.com/user-attachments/assets/8f3551e9-cd22-4aef-9298-e27f35fc57bd) |
+
+| Delete Video | Delete Last Recorded Uploading Video To Record New One |
+|---|---|
+| ![Delete Video](https://github.com/user-attachments/assets/1a970991-a71f-4caa-979f-c5e846fc2f03) | ![Delete Last Recorded Uploading Video To Record New One](https://github.com/user-attachments/assets/7b04a21f-0980-46c5-9565-f1ffea0fc977) |
 
 ## Architecture
 <img src="README_Assets/MVVM.jpg" alt="MVVM">
