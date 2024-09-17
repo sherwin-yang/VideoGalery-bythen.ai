@@ -2,6 +2,7 @@
 * [Overview](#Overview): Features, Architecture, and Assumptions
 * [More About Architectures](#More-About-Architectures)
 * [More About User Defined Packages and Systems](#More-About-User-Defined-Packages-and-Systems)
+* [Improvement Plans](#Improvement-Plans)
 
 # Overview
 ## Features
@@ -22,7 +23,7 @@ All views are supporting light and dark mode.
 ## Architecture
 <img src="README_Assets/MVVM.jpg" alt="MVVM">
 
-***Higher Level Modules depend on Lower Level Modules through dependency injections of protocol or function***
+***Higher Level Modules depend on Lower Level Modules through dependency injections of `protocol` or `function`***
 
 * **SwiftUIView:** Presentation layer. (Exception to the rule above) Is dependent on its `ViewModel` concrete object (since a `ViewModel` belongs to a single View).
 * **ViewModel:** Represent its presentation layer states and logic.
@@ -97,3 +98,11 @@ Consist of:
         case failed
     } 
     ```
+
+# Improvement Plans
+1. Move `UploadVideoStatus` checking in `VideoGaleryView` to its ViewModel
+1. Move on Recording Button tapped logic in `VideoRecordingView` to a ViewModel 
+1. `ApiKeyProvider` provides encoded auth key
+1. Complete unit tests in some modules (check commits)
+1. Add UI tests
+1. (...)
