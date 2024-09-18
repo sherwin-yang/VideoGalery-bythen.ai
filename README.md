@@ -50,16 +50,16 @@ See [More About Architectures](#More-About-Architectures) or [More About User De
 * [ApiKeyProvider](#ApiKeyProvider)
 * [HTTPClient](#HTTPClient)
 
-## VideoRecordingView
+## `VideoRecordingView`
 Wrapping `CameraViewController` through `UIViewControllerRepresentable`. Use `AVCaptureSession` to connect to device's camera and enable video recording.
 
 **Navigates to:**
 * `UploadVideoPreviewView`: [open details](#UploadVideoPreviewView)
 
-## UploadVideoPreviewView
+## `UploadVideoPreviewView`
 <img src="README_Assets/UploadVideoPreviewView.jpg" alt="UploadVideoPreviewView">
 
-*Upload Request using Alomofire*
+*Upload Request using `Alomofire`*
 
 **More About:**
 * [ApiKeyProvider](#ApiKeyProvider)
